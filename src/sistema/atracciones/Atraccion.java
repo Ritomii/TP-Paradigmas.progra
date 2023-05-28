@@ -1,4 +1,4 @@
-package sources;
+package sistema.atracciones;
 
 public class Atraccion {
 	

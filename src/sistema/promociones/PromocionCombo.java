@@ -1,4 +1,6 @@
-package sources;
+package sistema.promociones;
+
+import sistema.atracciones.Atraccion;
 
 public class PromocionCombo extends Promocion{
 	private Atraccion extra;

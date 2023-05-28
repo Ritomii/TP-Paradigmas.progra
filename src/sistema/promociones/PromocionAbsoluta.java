@@ -1,6 +1,8 @@
-package sources;
+package sistema.promociones;
 
-public class PromocionAbsoluta extends Promocion {
+import sistema.atracciones.Atraccion;
+
+public class PromocionAbsoluta extends Promocion{
 	private double precioFinal;
 	
 	public PromocionAbsoluta(Atraccion[] atracciones, double duracion, double precioOriginal, double montoDescuento) {
@@ -11,5 +13,4 @@ public class PromocionAbsoluta extends Promocion {
 	public double getPrecioFinal() {
 		return this.precioFinal;
 	}
-
 }

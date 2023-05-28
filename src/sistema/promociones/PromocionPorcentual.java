@@ -1,7 +1,8 @@
-package sources;
+package sistema.promociones;
 
-public class PromocionPorcentual extends Promocion {
-	//aca entre en duda en si crear una variable para guardarnos el porcentaje. aunque solo tendria sentido si lo vamos a mostrar por pantalla. sino ni me molestaria en crearla
+import sistema.atracciones.Atraccion;
+
+public class PromocionPorcentual extends Promocion{
 	private double precioFinal;
 	
 	public PromocionPorcentual(Atraccion[] atracciones, double duracion, double precioOriginal,double porcentaje) {
