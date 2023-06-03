@@ -1,0 +1,18 @@
+Para la carga de datos, se emplea la clase Datos.
+
+En esta clase Datos van encapsulados todos los datos que vamos a necesitar para mostrar
+adecuadamente las promos y atracciones al usuario.
+
+Segun lo habiamos hablado, plantee una base con HashMaps y Trees, pero hubo un par de complicaciones.
+
+-Las modificaciones mas importante, fueron la implementacion de un HashMap aparte para todas las
+atracciones, a modo de ubicarlas rapidamente por el nombre.
+
+-Lo otro es que el arbol de promociones y la logica de su carga se podria mejorar, propongo en la reunion proxima
+tratar de ver si podemos incorporar un Composite o State para las Promociones.
+
+-Notar que hice una clase Archivo dedicada a la carga de Usuarios, Atracciones y Promociones.
+Dichas clases archivo son llamadas desde una clase Lector y le va pasando la clase Datos que va cargando
+a medida que lee los archivos.
+Lo ideal seria que desde el main usemos el lector, retorne la clase Datos con todo ya cargado, y aparte 
+tengamos una clase Menu donde ya usemos todo cargado y ordenado.

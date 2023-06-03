@@ -1,16 +1,13 @@
 package sistema.promociones;
 
-import sistema.atracciones.Atraccion;
-
 public class PromocionAbsoluta extends Promocion{
-	private double precioFinal;
-	
-	public PromocionAbsoluta(Atraccion[] atracciones, double duracion, double precioOriginal, double montoDescuento) {
-		super(atracciones, duracion, precioOriginal);
-		this.precioFinal = this.precioOriginal - montoDescuento;
+	private int descuento;
+
+	public PromocionAbsoluta(String nombre, String nombre_atraccion1, String nombre_atraccion2, String tipo_promocion,
+			int descuento) {
+		super(nombre, nombre_atraccion1, nombre_atraccion2, tipo_promocion);
+		this.descuento = descuento;
 	}
 	
-	public double getPrecioFinal() {
-		return this.precioFinal;
-	}
+	
 }

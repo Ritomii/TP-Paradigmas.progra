@@ -7,10 +7,11 @@ public class Inicio {
 
 	public static void main(String[] args) {
 		Lector lectura = new Lector();
-		Datos[] cargados;
+		Datos cargados;
 		
 		cargados = lectura.leerDatos();
-	
+		
+		
 	}
 
 }

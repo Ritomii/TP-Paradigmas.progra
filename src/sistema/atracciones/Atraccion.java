@@ -3,17 +3,17 @@ package sistema.atracciones;
 public class Atraccion {
 	
 	private String nombre;
-	private String tipo;
 	private double costo;
 	private double tiempoPromedio;
 	private int cupoDiario;
-	
-	Atraccion(String nombre, String tipo, double costo, double tiempoPromedio, int cupo){
+	private String tipo;
+
+	public Atraccion(String nombre, double costo, double tiempoPromedio, int cupoDiario, String tipo) {
 		this.nombre = nombre;
-		this.tipo = tipo;
 		this.costo = costo;
 		this.tiempoPromedio = tiempoPromedio;
-		this.cupoDiario = cupo;
+		this.cupoDiario = cupoDiario;
+		this.tipo = tipo;
 	}
 
 	public String getNombre() {

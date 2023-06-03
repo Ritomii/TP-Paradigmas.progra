@@ -1,16 +1,12 @@
 package sistema.promociones;
 
-import sistema.atracciones.Atraccion;
-
 public class PromocionPorcentual extends Promocion{
-	private double precioFinal;
-	
-	public PromocionPorcentual(Atraccion[] atracciones, double duracion, double precioOriginal,double porcentaje) {
-		super(atracciones, duracion, precioOriginal);
-		this.precioFinal = ((this.precioOriginal*porcentaje)/100);
+	private double descuento;
+
+	public PromocionPorcentual(String nombre, String nombre_atraccion1, String nombre_atraccion2, String tipo_promocion,
+			double descuento) {
+		super(nombre, nombre_atraccion1, nombre_atraccion2, tipo_promocion);
+		this.descuento = descuento;
 	}
 	
-	public double getPrecioFinal() {
-		return this.precioFinal;
-	}
 }
