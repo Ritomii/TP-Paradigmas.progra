@@ -27,6 +27,8 @@ public class Usuario {
 		return preferencia;
 	}
 	
+	//A partir de aca, revisar comparaciones para ints y doubles.
+	//Revisar que el filtro sea suficiente
 	public boolean puedeComprarPromocion(Promocion promo) {
 		return this.dinero >= promo.getPrecio_mostrar()
 				&& this.tiempo >= promo.getDuracion()

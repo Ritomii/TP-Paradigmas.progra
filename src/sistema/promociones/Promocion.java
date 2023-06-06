@@ -11,7 +11,7 @@ public class Promocion implements Comparable<Promocion>{
 	protected double precioOriginal;
 	protected double precio_mostrar;//final
 	
-	protected Atraccion[] vector_atracciones;
+	protected Atraccion[] vector_atracciones; //Este podria ser un Arraylist pero no hay porque agregar y sacar
 
 	public Promocion(String nombre, String nombre_atraccion1, String nombre_atraccion2, String tipo_promocion) {
 		this.nombre = nombre;
