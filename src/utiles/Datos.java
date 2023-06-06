@@ -1,8 +1,8 @@
 package utiles;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.Map;
 import java.util.TreeSet;
 
 import sistema.atracciones.Atraccion;
@@ -12,10 +12,13 @@ import sistema.usuarios.Usuario;
 public class Datos {
 	LinkedList<Usuario> lista_usuarios;
 	
-	HashMap<String, Atraccion> mapa_atracciones = new HashMap<String, Atraccion>();
-	HashMap<String, TreeSet<Atraccion>> mapa_atracciones_tipos = new HashMap<String, TreeSet<Atraccion>>();
-	HashMap<Promocion, ArrayList<Atraccion>> relaciones_promociones = new HashMap<Promocion, ArrayList<Atraccion>>();
-	HashMap<String, TreeSet<Promocion>> mapa_promos_tipos = new HashMap<String, TreeSet<Promocion>>();
+	HashMap<String, Atraccion> mapa_atracciones;
+	HashMap<String, TreeSet<Atraccion>> mapa_atracciones_tipos;
+	
+	HashMap<String, TreeSet<Promocion>> mapa_promos_tipos;
+	
+	HashMap<String, TreeSet<Promocion>> mapa_no_preferencia_promociones;
+	HashMap<String, TreeSet<Atraccion>> mapa_no_preferencia_atraccion;
 	
 	public LinkedList<Usuario> getLista_usuarios() {
 		return lista_usuarios;
@@ -35,15 +38,8 @@ public class Datos {
 	public void setMapa_atracciones_tipos(HashMap<String, TreeSet<Atraccion>> mapa_atracciones_tipos) {
 		this.mapa_atracciones_tipos = mapa_atracciones_tipos;
 	}
-	
 	public String obtenerTipoAtraccion(String nombre_atraccion) {
 		return this.mapa_atracciones.get(nombre_atraccion).getTipo();
-	}
-	public HashMap<Promocion, ArrayList<Atraccion>> getRelaciones_promociones() {
-		return relaciones_promociones;
-	}
-	public void setRelaciones_promociones(HashMap<Promocion, ArrayList<Atraccion>> relaciones_promociones) {
-		this.relaciones_promociones = relaciones_promociones;
 	}
 	public HashMap<String, TreeSet<Promocion>> getMapa_promos_tipos() {
 		return mapa_promos_tipos;
@@ -51,5 +47,52 @@ public class Datos {
 	public void setMapa_promos_tipos(HashMap<String, TreeSet<Promocion>> mapa_promos_tipos) {
 		this.mapa_promos_tipos = mapa_promos_tipos;
 	}
+	public HashMap<String, TreeSet<Promocion>> getMapa_no_preferencia_promociones() {
+		return mapa_no_preferencia_promociones;
+	}
+	public HashMap<String, TreeSet<Atraccion>> getMapa_no_preferencia_atraccion() {
+		return mapa_no_preferencia_atraccion;
+	}
 	
+	public void ordenarNoPreferencias() {
+		this.mapa_no_preferencia_promociones = new HashMap<String, TreeSet<Promocion>>();
+		this.mapa_no_preferencia_atraccion = new HashMap<String, TreeSet<Atraccion>>();
+		String[] tipos = (String[])this.mapa_promos_tipos.keySet().toArray();
+		
+		for (int i = 0; i < tipos.length; i++) {
+			this.mapa_no_preferencia_promociones.put(tipos[i], this.obtenerArbolPromocionSinTipo(tipos[i]));
+		}
+		
+		for (int i = 0; i < tipos.length; i++) {
+			this.mapa_no_preferencia_atraccion.put(tipos[i], this.obtenerArbolAtraccionSinTipo(tipos[i]));
+		}
+	}
+	
+	private TreeSet<Promocion> obtenerArbolPromocionSinTipo(String descartar_tipo) {
+		TreeSet<Promocion> arbol_sin_tipo = new TreeSet<Promocion>();
+		for (Map.Entry<String, TreeSet<Promocion>> entry : this.mapa_promos_tipos.entrySet()) {
+			if(!descartar_tipo.equals(entry.getKey())) {
+				for (Promocion promocion_actual : entry.getValue()) {
+					arbol_sin_tipo.add(promocion_actual);
+				}
+			}
+		}
+		return arbol_sin_tipo;
+	}
+	
+	private TreeSet<Atraccion> obtenerArbolAtraccionSinTipo(String descartar_tipo) {
+		TreeSet<Atraccion> arbol_sin_tipo = new TreeSet<Atraccion>();
+		for (Map.Entry<String, TreeSet<Atraccion>> entry : this.mapa_atracciones_tipos.entrySet()) {
+			if(!descartar_tipo.equals(entry.getKey())) {
+				for (Atraccion atraccion_actual : entry.getValue()) {
+					arbol_sin_tipo.add(atraccion_actual);
+				}
+			}
+		}
+		return arbol_sin_tipo;
+	}
+	
+	public Atraccion obtenerAtraccion(String nombre_atraccion) {
+		return this.mapa_atracciones.get(nombre_atraccion);
+	}
 }

@@ -1,5 +1,6 @@
 package sistema.atracciones;
 
+
 public class Atraccion {
 	
 	private String nombre;
@@ -36,4 +37,7 @@ public class Atraccion {
 		return this.cupoDiario;
 	}
 
+	public boolean tieneCupo() {
+		return this.cupoDiario > 0;
+	}
 }

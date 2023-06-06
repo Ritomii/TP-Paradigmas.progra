@@ -7,6 +7,11 @@ public class PromocionCombo extends Promocion{
 			String nombre_atraccion_gratis) {
 		super(nombre, nombre_atraccion1, nombre_atraccion2, tipo_promocion);
 		this.nombre_atraccion_gratis = nombre_atraccion_gratis;
+		this.precio_mostrar = this.precioOriginal;
+	}
+	
+	public String getAtraccionGratis() {
+		return this.nombre_atraccion_gratis;
 	}
 	
 }

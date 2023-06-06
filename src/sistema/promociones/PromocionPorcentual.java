@@ -7,6 +7,10 @@ public class PromocionPorcentual extends Promocion{
 			double descuento) {
 		super(nombre, nombre_atraccion1, nombre_atraccion2, tipo_promocion);
 		this.descuento = descuento;
+		this.precio_mostrar -= ((this.precioOriginal*descuento)/100);
 	}
 	
+	public double getDescuento() {
+		return this.descuento;
+	}
 }
