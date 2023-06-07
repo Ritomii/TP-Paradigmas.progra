@@ -51,7 +51,7 @@ public class ArchivoPromociones extends Archivo{
 //			cargada = generarPromocion(nombre_promocion,a1,a2,descuento);
 			this.cargarMapaTipos(mapa_promos_tipos, cargada, preferencia, tipo_promocion);
 		}
-		
+		System.out.println(mapa_promos_tipos.get("Aventura").size());
 		carga.setMapa_promos_tipos(mapa_promos_tipos);
 		System.out.println("llego hasta promocion");
 	}

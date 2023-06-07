@@ -58,7 +58,7 @@ public class Datos {
 	public void ordenarNoPreferencias() {
 		this.mapa_no_preferencia_promociones = new HashMap<String, TreeSet<Promocion>>();
 		this.mapa_no_preferencia_atraccion = new HashMap<String, TreeSet<Atraccion>>();
-		String[] tipos = (String[])this.mapa_promos_tipos.keySet().toArray();
+		String[] tipos = this.mapa_promos_tipos.keySet().toArray(new String[mapa_promos_tipos.size()]);
 		
 		for (int i = 0; i < tipos.length; i++) {
 			this.mapa_no_preferencia_promociones.put(tipos[i], this.obtenerArbolPromocionSinTipo(tipos[i]));

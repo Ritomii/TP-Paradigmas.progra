@@ -12,7 +12,7 @@ public class Inicio {
 		
 		cargados = lectura.leerDatos();
 		consola.mostrar(cargados);
-		
+		System.out.println("termine");
 	}
 
 }
