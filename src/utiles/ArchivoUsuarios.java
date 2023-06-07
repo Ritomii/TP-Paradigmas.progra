@@ -23,6 +23,7 @@ public class ArchivoUsuarios extends Archivo{
 			scanner.nextLine();
 			lista_usuarios.add(new Usuario(nombre, preferencia, dinero, tiempo));
 		}
+		System.out.println(lista_usuarios.getLast().getNombre());
 		carga.setLista_usuarios(lista_usuarios);
 	}
 }

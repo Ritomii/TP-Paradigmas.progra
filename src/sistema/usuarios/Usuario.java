@@ -27,6 +27,9 @@ public class Usuario {
 		return preferencia;
 	}
 	
+	public String getNombre() {
+		return this.nombre;
+	}
 	//A partir de aca, revisar comparaciones para ints y doubles.
 	//Revisar que el filtro sea suficiente
 	public boolean puedeComprarPromocion(Promocion promo) {

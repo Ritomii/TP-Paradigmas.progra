@@ -1,13 +1,15 @@
 package sistema.promociones;
 
+import sistema.atracciones.Atraccion;
+
 public class PromocionCombo extends Promocion{
 	private String nombre_atraccion_gratis;
 
-	public PromocionCombo(String nombre, String nombre_atraccion1, String nombre_atraccion2, String tipo_promocion,
+	public PromocionCombo(String nombre, int cant_atracciones, Atraccion [] atracciones, String tipo_promocion,
 			String nombre_atraccion_gratis) {
-		super(nombre, nombre_atraccion1, nombre_atraccion2, tipo_promocion);
+		super(nombre, cant_atracciones, atracciones , tipo_promocion);
 		this.nombre_atraccion_gratis = nombre_atraccion_gratis;
-		this.precio_mostrar = this.precioOriginal;
+		this.precio_mostrar = this.precio_original;
 	}
 	
 	public String getAtraccionGratis() {

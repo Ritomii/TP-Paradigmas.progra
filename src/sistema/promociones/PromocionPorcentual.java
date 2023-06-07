@@ -1,13 +1,15 @@
 package sistema.promociones;
 
+import sistema.atracciones.Atraccion;
+
 public class PromocionPorcentual extends Promocion{
 	private double descuento;
 
-	public PromocionPorcentual(String nombre, String nombre_atraccion1, String nombre_atraccion2, String tipo_promocion,
+	public PromocionPorcentual(String nombre, int cant_atracciones, Atraccion [] atracciones, String tipo_promocion,
 			double descuento) {
-		super(nombre, nombre_atraccion1, nombre_atraccion2, tipo_promocion);
+		super(nombre, cant_atracciones, atracciones , tipo_promocion);
 		this.descuento = descuento;
-		this.precio_mostrar -= ((this.precioOriginal*descuento)/100);
+		this.precio_mostrar -= ((this.precio_original*descuento)/100);
 	}
 	
 	public double getDescuento() {

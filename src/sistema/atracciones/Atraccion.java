@@ -1,7 +1,7 @@
 package sistema.atracciones;
 
 
-public class Atraccion {
+public class Atraccion implements Comparable<Atraccion>{
 	
 	private String nombre;
 	private double costo;
@@ -39,5 +39,14 @@ public class Atraccion {
 
 	public boolean tieneCupo() {
 		return this.cupoDiario > 0;
+	}
+
+	@Override
+	public int compareTo(Atraccion otra) {
+		int retorno;
+		if((retorno = Double.compare(this.getCosto(), otra.getCosto())) == 0) {
+			return Double.compare(this.getTiempoPromedio(), otra.getTiempoPromedio());
+		}
+		return retorno;
 	}
 }

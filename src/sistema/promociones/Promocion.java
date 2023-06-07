@@ -7,18 +7,31 @@ public class Promocion implements Comparable<Promocion>{
 	protected String nombre_atraccion1;
 	protected String nombre_atraccion2;
 	protected String tipo_promocion;
+	int cant_atracciones;
 	protected double duracion;
-	protected double precioOriginal;
+	protected double precio_original;
 	protected double precio_mostrar;//final
 	
 	protected Atraccion[] vector_atracciones; //Este podria ser un Arraylist pero no hay porque agregar y sacar
 
-	public Promocion(String nombre, String nombre_atraccion1, String nombre_atraccion2, String tipo_promocion) {
+//	public Promocion(String nombre, String nombre_atraccion1, String nombre_atraccion2, String tipo_promocion) {
+//		this.nombre = nombre;
+//		this.nombre_atraccion1 = nombre_atraccion1;
+//		this.nombre_atraccion2 = nombre_atraccion2;
+//		this.tipo_promocion = tipo_promocion;
+//		
+//	}
+	
+	public Promocion(String nombre, int cant_atracciones, Atraccion [] atracciones, String tipo_promocion) {
 		this.nombre = nombre;
-		this.nombre_atraccion1 = nombre_atraccion1;
-		this.nombre_atraccion2 = nombre_atraccion2;
 		this.tipo_promocion = tipo_promocion;
-		
+	
+		vector_atracciones = new Atraccion[cant_atracciones]; //inicializo vector_atracciones y lo cargo
+		for(int i = 0; i < cant_atracciones; i++) {
+			this.vector_atracciones[i] = atracciones[i];
+			this.precio_original += atracciones[i].getCosto(); //voy tambien cargandole el precio y la duracion
+			this.duracion += atracciones[i].getTiempoPromedio();
+		}
 	}
 	
 	public double getDuracion() {
