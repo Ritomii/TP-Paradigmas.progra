@@ -30,6 +30,12 @@ public class Usuario {
 	public String getNombre() {
 		return this.nombre;
 	}
+	
+	@Override
+	public String toString() {
+		return "Visitante: " + nombre + "\nPreferencia: " + preferencia + "\nPresupuesto: " + dinero + "\nTiempo disponible"
+				+ tiempo + "\n";
+	}
 	//A partir de aca, revisar comparaciones para ints y doubles.
 	//Revisar que el filtro sea suficiente
 	public boolean puedeComprarPromocion(Promocion promo) {

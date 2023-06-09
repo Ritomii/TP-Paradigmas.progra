@@ -1,8 +1,7 @@
 package sistema.atracciones;
 
+public class Atraccion implements Comparable<Atraccion> {
 
-public class Atraccion implements Comparable<Atraccion>{
-	
 	private String nombre;
 	private double costo;
 	private double tiempoPromedio;
@@ -40,13 +39,35 @@ public class Atraccion implements Comparable<Atraccion>{
 	public boolean tieneCupo() {
 		return this.cupoDiario > 0;
 	}
+	
+	@Override
+	public String toString() {
+		return "Atraccion\nNombre: [" + nombre + "]\n-Precio: " + costo + "\n-Duracion: " + tiempoPromedio + "\n";
+	}
 
 	@Override
-	public int compareTo(Atraccion otra) {
+	public int compareTo(Atraccion otra) {// Necesito que se ordene de mayor a menor
 		int retorno;
-		if((retorno = Double.compare(this.getCosto(), otra.getCosto())) == 0) {
-			return Double.compare(this.getTiempoPromedio(), otra.getTiempoPromedio());
-		}
+		if ((retorno = Double.compare(this.costo, otra.costo)) == 0) {
+			retorno = (Double.compare(this.tiempoPromedio, otra.tiempoPromedio) > 0) ? -1 : 1;
+		}else if(retorno > 0)
+			retorno = -1;
+		else
+			retorno = 1;
 		return retorno;
 	}
+//	@Override
+//	public int compareTo(Atraccion otra) { // Necesito que se ordene de mayor a menor
+//		int res;
+//		if ((res = Double.compare(this.costo, otra.costo)) == 0) {
+//			res = (Double.compare(this.tiempoPromedio, otra.tiempoPromedio) > 0) ? -1 : 1;
+//			//return res;
+//		}else if(res > 0)
+//			res = -1;
+//		else
+//			res = 1;
+//		//res = (res > 0) ? -1 : 1;// SI this.costo > otra.costo
+//		return res;
+//	}
+
 }

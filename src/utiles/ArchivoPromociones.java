@@ -19,21 +19,19 @@ public class ArchivoPromociones extends Archivo{
 		
 		int cant_atracciones;
 		String nombre_promocion;
-		String atraccion_actual;
+		String atraccion_actual;// nombre_atraccion
 		Atraccion atraccion_obj;
 		String preferencia;
-//		String nombre_atraccion2;
 		String tipo_promocion;
 		String descuento;
 		//traernos las atracciones desde el mapa de atracciones y las cargamos
-		//String tipo; //tipoAtraccion
 		Promocion cargada;
 		for (int i = 0; i < cant; i++) {
 			nombre_promocion = scanner.nextLine();
-			preferencia = scanner.nextLine();
+			preferencia = scanner.nextLine();// NO hace falta
 			cant_atracciones = scanner.nextInt();
 			scanner.nextLine();
-			Atraccion atracciones [] = new Atraccion [cant_atracciones];
+			Atraccion[] atracciones = new Atraccion [cant_atracciones];
 			for(int j = 0; j < cant_atracciones; j++) {
 				atraccion_actual = scanner.nextLine();
 				atraccion_obj = carga.obtenerAtraccion(atraccion_actual);
@@ -42,14 +40,9 @@ public class ArchivoPromociones extends Archivo{
 			tipo_promocion = scanner.nextLine();
 			descuento = scanner.nextLine();
 			cargada = generarPromocion(nombre_promocion,preferencia,cant_atracciones,tipo_promocion,atracciones,descuento);
-//			nombre_atraccion1 = scanner.nextLine();
-//			nombre_atraccion2 = scanner.nextLine();			
-			//tipo = carga.obtenerTipoAtraccion(nombre_atraccion1); 
-//			a1 = carga.obtenerAtraccion(nombre_atraccion1);
-//			a2 = carga.obtenerAtraccion(nombre_atraccion2);
-//			cargada = obtenerPromocionDerivada(nombre_promocion, nombre_atraccion1, nombre_atraccion2, tipo_promocion, descuento); //conjunto de datos --> promoDerivada
-//			cargada = generarPromocion(nombre_promocion,a1,a2,descuento);
+
 			this.cargarMapaTipos(mapa_promos_tipos, cargada, preferencia, tipo_promocion);
+			//Para la preferencia : atracciones[0].getTipo()
 		}
 		System.out.println(mapa_promos_tipos.get("Aventura").size());
 		carga.setMapa_promos_tipos(mapa_promos_tipos);
@@ -58,29 +51,12 @@ public class ArchivoPromociones extends Archivo{
 
 	
 	private void cargarMapaTipos(HashMap<String, TreeSet<Promocion>> mapa, Promocion cargada, String tipo, String tipo_promocion) {
-		if(!mapa.containsKey(tipo))
+		if(!mapa.containsKey(tipo))// Si no contiene ese tipo_atraccion
 			mapa.put(tipo, new TreeSet<Promocion>());
 		
-		mapa.get(tipo).add(cargada);
+		mapa.get(tipo).add(cargada);// Obtener el TreeSet de ese tipo_atraccion
+		// y cargar la promocion a dicho TreeSet
 	}
-	
-//	private Promocion generarPromocion(String nombre_promocion, Atraccion a1, Atraccion a2, String descuento) {
-//		Promocion retorno = null;
-//		String tipo_promocion = a1.getTipo();
-//		switch(tipo_promocion) {
-//		case "Porcentual":
-//			retorno = new PromocionPorcentual(nombre_promocion, a1.getNombre(), a2.getNombre(), tipo_promocion, Double.parseDouble(descuento));
-//			break;
-//		case "Absoluta":
-//			retorno = new PromocionAbsoluta(nombre_promocion, a1.getNombre(), a2.getNombre(), tipo_promocion, Integer.parseInt(descuento));
-//			break;
-//		case "Gratis":
-//			retorno = new PromocionCombo(nombre_promocion, a1.getNombre(), a2.getNombre(), tipo_promocion, descuento);
-//			break;
-//		}
-//		return retorno;
-//	}
-//}
 	
 	private Promocion generarPromocion(String nombre_promocion, String preferencia, int cant_atracciones, String tipo, Atraccion[] atracciones, String descuento) {
 		Promocion retorno = null;
@@ -94,25 +70,9 @@ public class ArchivoPromociones extends Archivo{
 		case "Gratis":
 			retorno = new PromocionCombo(nombre_promocion, cant_atracciones, atracciones, tipo, descuento);
 			break;
+			// En descuento esta la atraccion gratuita
 		}
 		return retorno;
 	}
 }
 	
-	
-//	private Promocion obtenerPromocionDerivada(String nombre_promocion, String nombre_atraccion1, String nombre_atraccion2,
-//			String tipo_promocion, String descuento) {
-//		Promocion retorno = null;
-//		switch (tipo_promocion) {
-//		case "Porcentual": 
-//			retorno = new PromocionPorcentual(nombre_promocion, nombre_atraccion1, nombre_atraccion2, tipo_promocion, Double.parseDouble(descuento));
-//			break;
-//		case "Absoluta":
-//			retorno = new PromocionAbsoluta(nombre_promocion, nombre_atraccion1, nombre_atraccion2, tipo_promocion, Integer.parseInt(descuento));
-//			break;
-//		case "Gratis":
-//			retorno = new PromocionCombo(nombre_promocion, nombre_atraccion1, nombre_atraccion2, tipo_promocion, descuento);
-//		}
-//		return retorno;
-//	}
-//}

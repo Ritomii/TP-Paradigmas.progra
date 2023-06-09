@@ -1,14 +1,9 @@
 package utiles;
 
-import java.io.File;
-import java.util.Locale;
-import java.util.Scanner;
-
 public class Lector {
 	private static final String RUTA_USUARIOS = "./entradas/usuarios.in";
 	private static final String RUTA_ATRACCIONES = "./entradas/atracciones.in";
 	private static final String RUTA_PROMOCIONES = "./entradas/promociones.in";
-	
 	
 	public Datos leerDatos() {
 		ArchivoUsuarios arch_usuarios = new ArchivoUsuarios();
@@ -24,7 +19,5 @@ public class Lector {
 		
 		return cargados;
 	}
-	
-	
 		
 }

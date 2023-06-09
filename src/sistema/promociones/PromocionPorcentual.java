@@ -15,4 +15,12 @@ public class PromocionPorcentual extends Promocion{
 	public double getDescuento() {
 		return this.descuento;
 	}
+	
+	@Override
+	public String toString() {
+		String atracciones = this.obtenerAtraccionesIncluidas();
+		return "Promocion:" + nombre + "\n-Atracciones incluidas: " + atracciones + "\n-Duracion=" + duracion
+				+ "\n-Precio original: " + precio_original + "\n-Precio con descuento: " + precio_mostrar + "\n";
+	}
+	
 }

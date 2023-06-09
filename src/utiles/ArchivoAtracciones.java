@@ -41,10 +41,11 @@ public class ArchivoAtracciones extends Archivo{
 	}
 	
 	private void cargarMapaTipos(HashMap<String, TreeSet<Atraccion>> mapa, Atraccion cargada, String tipo) {
-		if(!mapa.containsKey(tipo))
+		if(!mapa.containsKey(tipo))// Si no contiene el tipo_atraccion 
 			mapa.put(tipo, new TreeSet<Atraccion>());
 		
-		mapa.get(tipo).add(cargada);
+		mapa.get(tipo).add(cargada);// Obtener el TreeSet de ese tipo_atraccion
+		// y cargar la atraccion a dicho TreeSet
 	}
 	
 }
