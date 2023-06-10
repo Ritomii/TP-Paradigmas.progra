@@ -33,13 +33,14 @@ public class Promocion implements Comparable<Promocion> {
 
 	protected String obtenerAtraccionesIncluidas() {
 		String atracciones = "[";
-		int cant_atracciones = this.vector_atracciones.length;
-		for (int i = 0; i < cant_atracciones - 1; i++) {
+		int i;
+		for (i = 0; i < this.vector_atracciones.length -1; i++) {
 			atracciones += this.vector_atracciones[i].getNombre() + ", ";
 		}
-		atracciones += this.vector_atracciones[cant_atracciones].getNombre() + "]";
+		atracciones += this.vector_atracciones[i].getNombre() + "]";
 		return atracciones;
 	}
+	
 	public double getDuracion() {
 		return duracion;
 	}
@@ -51,8 +52,8 @@ public class Promocion implements Comparable<Promocion> {
 	@Override
 	public int compareTo(Promocion otra) { // Ascendente por precio, despues horas.
 		int retorno;
-		if ((retorno = Double.compare(this.precio_mostrar, otra.precio_mostrar)) == 0)
-			return Double.compare(this.duracion, otra.duracion);
+		if ((retorno = Double.compare(otra.precio_mostrar, this.precio_mostrar)) == 0)
+			return Double.compare(otra.duracion, this.duracion);
 		return retorno;
 	}
 

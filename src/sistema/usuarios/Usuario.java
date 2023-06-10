@@ -33,7 +33,7 @@ public class Usuario {
 	
 	@Override
 	public String toString() {
-		return "Visitante: " + nombre + "\nPreferencia: " + preferencia + "\nPresupuesto: " + dinero + "\nTiempo disponible"
+		return "Visitante: " + nombre + "\nPreferencia: " + preferencia + "\nPresupuesto: " + dinero + "\nTiempo disponible: "
 				+ tiempo + "\n";
 	}
 	//A partir de aca, revisar comparaciones para ints y doubles.

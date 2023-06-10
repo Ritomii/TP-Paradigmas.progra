@@ -9,7 +9,7 @@ public class PromocionAbsoluta extends Promocion{
 			int descuento) {
 		super(nombre, cant_atracciones, atracciones , tipo_promocion);
 		this.descuento = descuento;
-		this.precio_mostrar = this.precio_mostrar - descuento;
+		this.precio_mostrar = this.precio_original - descuento;
 	}
 	
 	public int getDescuento() {

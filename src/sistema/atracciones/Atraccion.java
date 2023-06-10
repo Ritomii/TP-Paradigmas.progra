@@ -48,12 +48,8 @@ public class Atraccion implements Comparable<Atraccion> {
 	@Override
 	public int compareTo(Atraccion otra) {// Necesito que se ordene de mayor a menor
 		int retorno;
-		if ((retorno = Double.compare(this.costo, otra.costo)) == 0) {
-			retorno = (Double.compare(this.tiempoPromedio, otra.tiempoPromedio) > 0) ? -1 : 1;
-		}else if(retorno > 0)
-			retorno = -1;
-		else
-			retorno = 1;
+		if((retorno = Double.compare(otra.costo, this.costo)) == 0)
+			return Double.compare(otra.tiempoPromedio,this.tiempoPromedio);
 		return retorno;
 	}
 //	@Override
