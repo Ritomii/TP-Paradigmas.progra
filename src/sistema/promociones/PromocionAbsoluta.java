@@ -3,24 +3,24 @@ package sistema.promociones;
 import sistema.atracciones.Atraccion;
 
 public class PromocionAbsoluta extends Promocion{
-	private int descuento;
-	// en el otro no hay cant_atracciones
-	public PromocionAbsoluta(String nombre, int cant_atracciones, Atraccion [] atracciones, String tipo_promocion,
-			int descuento) {
-		super(nombre, cant_atracciones, atracciones , tipo_promocion);
-		this.descuento = descuento;
-		this.precio_mostrar = this.precio_original - descuento;
-	}
+	private double descuento;// NO DEBERÍA IR PERO SI LO NECESITO PARA ALGO...
 	
-	public int getDescuento() {
+    public PromocionAbsoluta(String nombre, Atraccion[] atracciones, String tipo_promocion, double precio_absoluto) {
+        // No viene un descuento sino un precio absoluto por todo el paquete
+        super(nombre, atracciones, tipo_promocion);
+        // this.descuento = descuento;
+        // this.precio_mostrar = this.precio_original - descuento;
+        this.descuento = this.precio_original - precio_absoluto;//...LO CALCULO ASI
+        this.precio_mostrar = precio_absoluto;
+    }
+	
+	public double getDescuento() {
 		return this.descuento;
 	}
 	
 	@Override
 	public String toString() {
-		String atracciones = this.obtenerAtraccionesIncluidas();
-		return "Promocion:" + nombre + "\n-Atracciones incluidas: " + atracciones + "\n-Duracion=" + duracion
-				+ "\n-Precio original: " + precio_original + "\n-Por todo el paquete: " + precio_mostrar + "\n";
+		return super.toString() + "Descuento: $" + this.descuento + "\n";
 	}
 	
 }

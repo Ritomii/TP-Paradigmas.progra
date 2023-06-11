@@ -31,11 +31,49 @@ public class Usuario {
 		return this.nombre;
 	}
 	
+	public String salidaUsuario() {
+		String info_usuario = this.toString();
+		
+		String separador_informacion = "\n---------------------------------------\n";
+		
+		boolean compro_promociones = !this.lista_promociones.isEmpty();
+		String promociones_compradas = 
+				compro_promociones ? 
+						"Compro las siguientes promociones:\n":
+							"El usuario no registra promociones compradas\n";
+		
+		if(compro_promociones)
+			for (Promocion promocion : this.lista_promociones) {
+				promociones_compradas += promocion.toString();
+			}
+		
+		boolean compro_atracciones = !this.lista_atracciones.isEmpty();
+		String atracciones_compradas = 
+				compro_atracciones ?
+						"Compro las siguientes atracciones:\n":
+							"El usuario no registra atracciones compradas\n";
+		
+		if(compro_atracciones)
+			for (Atraccion atraccion : lista_atracciones) {
+				atracciones_compradas += atraccion.toString();
+			}
+		
+		return info_usuario +
+				separador_informacion +
+				promociones_compradas +
+				separador_informacion +
+				atracciones_compradas +
+				separador_informacion;
+	}
+	
 	@Override
 	public String toString() {
-		return "Visitante: " + nombre + "\nPreferencia: " + preferencia + "\nPresupuesto: " + dinero + "\nTiempo disponible: "
-				+ tiempo + "\n";
+		return	"Usuario: " + nombre + 
+				"\nPreferencia: " + preferencia + 
+				"\nPresupuesto restante: " + dinero + 
+				"\nTiempo restante: " + tiempo + "\n";
 	}
+	
 	//A partir de aca, revisar comparaciones para ints y doubles.
 	//Revisar que el filtro sea suficiente
 	public boolean puedeComprarPromocion(Promocion promo) {
@@ -61,6 +99,11 @@ public class Usuario {
 		for (int i = 0; i < nombres_atracciones.length; i++) {
 			this.set_atracciones_aceptadas.add(nombres_atracciones[i]);
 		}
+		
+		this.dinero -= promo.getPrecio_mostrar();
+		this.tiempo -= promo.getDuracion();
+		promo.comprar();
+		
 	}
 	
 	public boolean puedeComprarAtraccion(Atraccion atraccion) {
@@ -77,5 +120,8 @@ public class Usuario {
 	public void agregarAtraccion(Atraccion atraccion) {
 		this.set_atracciones_aceptadas.add(atraccion.getNombre());
 		this.lista_atracciones.add(atraccion);
+		this.dinero -= atraccion.getCosto();
+		this.tiempo -= atraccion.getTiempoPromedio();
+		atraccion.comprar();
 	}
 }

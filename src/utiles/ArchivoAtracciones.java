@@ -37,8 +37,8 @@ public class ArchivoAtracciones extends Archivo{
 		}
 		carga.setMapa_atracciones(mapa_atracciones);
 		carga.setMapa_atracciones_tipos(mapa_atracciones_tipos);
-		System.out.println("llego hasta atraccion");
 	}
+	
 	
 	private void cargarMapaTipos(HashMap<String, TreeSet<Atraccion>> mapa, Atraccion cargada, String tipo) {
 		if(!mapa.containsKey(tipo))// Si no contiene el tipo_atraccion 

@@ -64,8 +64,8 @@ public class Datos {
 		return mapa_no_preferencia_atraccion;
 	}
 
-	// A partir de aca se ordenan los arboles que se usan para mostrar Promos y
-	// Atracciones que no le gustan
+	/* A partir de aca se cargan los arboles ordenados que se usaran para las
+	 * no preferencias de los usuarios.*/
 	public void ordenarNoPreferencias() {
 		this.mapa_no_preferencia_promociones = new HashMap<String, TreeSet<Promocion>>();
 		this.mapa_no_preferencia_atraccion = new HashMap<String, TreeSet<Atraccion>>();

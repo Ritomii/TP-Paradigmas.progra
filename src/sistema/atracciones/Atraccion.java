@@ -40,9 +40,13 @@ public class Atraccion implements Comparable<Atraccion> {
 		return this.cupoDiario > 0;
 	}
 	
+	public void comprar() {
+		this.cupoDiario--;
+	}
+	
 	@Override
 	public String toString() {
-		return "Atraccion\nNombre: [" + nombre + "]\n-Precio: " + costo + "\n-Duracion: " + tiempoPromedio + "\n";
+		return "Atraccion:" + nombre + "|Precio: $" + costo + "|Duracion: " + tiempoPromedio + "hrs." + "\n";
 	}
 
 	@Override
@@ -52,18 +56,5 @@ public class Atraccion implements Comparable<Atraccion> {
 			return Double.compare(otra.tiempoPromedio,this.tiempoPromedio);
 		return retorno;
 	}
-//	@Override
-//	public int compareTo(Atraccion otra) { // Necesito que se ordene de mayor a menor
-//		int res;
-//		if ((res = Double.compare(this.costo, otra.costo)) == 0) {
-//			res = (Double.compare(this.tiempoPromedio, otra.tiempoPromedio) > 0) ? -1 : 1;
-//			//return res;
-//		}else if(res > 0)
-//			res = -1;
-//		else
-//			res = 1;
-//		//res = (res > 0) ? -1 : 1;// SI this.costo > otra.costo
-//		return res;
-//	}
 
 }

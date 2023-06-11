@@ -1,0 +1,27 @@
+Informe de Usuarios:
+Usuario: ClivioTest
+Preferencia: Terror
+Presupuesto restante: 940
+Tiempo restante: 970.0
+
+---------------------------------------
+Compro las siguientes promociones:
+Promocion:
+Promocion 1
+Tipo de promocion: Gratis
+Duracion:20.0hrs.
+Precio: $30.0
+---------------
+Atracciones incluidas:
+Atraccion:Atraccion 1|Precio: $10.0|Duracion: 10.0hrs.
+
+Atraccion:Atraccion 2|Precio: $20.0|Duracion: 10.0hrs.
+
+Atraccion gratis: Atraccion 4
+
+---------------------------------------
+Compro las siguientes atracciones:
+Atraccion:Atraccion 3|Precio: $30.0|Duracion: 10.0hrs.
+
+---------------------------------------
+

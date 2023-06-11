@@ -27,8 +27,8 @@ public class TestcompareTo {
 			Atraccion [] atraccionesDegustacion = new Atraccion[2];
 			atraccionesDegustacion[0] = a4;
 			atraccionesDegustacion[1] = a7;
-			PromocionAbsoluta promoPaisaje = new PromocionAbsoluta("La gran promo",2,atraccionesPaisaje,"Paisaje",100); //precio: 1000.50 horas: 3
-			PromocionAbsoluta promoDegustacion = new PromocionAbsoluta("Promo Gourmet",2,atraccionesDegustacion,"Degustacion",100); //precio 445.10 horas: 6
+			PromocionAbsoluta promoPaisaje = new PromocionAbsoluta("La gran promo",atraccionesPaisaje,"Paisaje",100); //precio: 1000.50 horas: 3
+			PromocionAbsoluta promoDegustacion = new PromocionAbsoluta("Promo Gourmet",atraccionesDegustacion,"Degustacion",100); //precio 445.10 horas: 6
 			
 			Assert.assertEquals(promoPaisaje.compareTo(promoDegustacion), -1);
 	}
@@ -42,8 +42,8 @@ public class TestcompareTo {
 			Atraccion [] atraccionesDegustacion = new Atraccion[2];
 			atraccionesDegustacion[0] = a9;
 			atraccionesDegustacion[1] = a10;
-			PromocionAbsoluta promoPaisaje = new PromocionAbsoluta("La gran promo",2,atraccionesPaisaje,"Paisaje",100); //precio: 1000.50 horas: 3
-			PromocionAbsoluta promoDegustacion = new PromocionAbsoluta("Promo Gourmet",2,atraccionesDegustacion,"Degustacion",100); //precio 445.10 horas: 6
+			PromocionAbsoluta promoPaisaje = new PromocionAbsoluta("La gran promo",atraccionesPaisaje,"Paisaje",100); //precio: 1000.50 horas: 3
+			PromocionAbsoluta promoDegustacion = new PromocionAbsoluta("Promo Gourmet",atraccionesDegustacion,"Degustacion",100); //precio 445.10 horas: 6
 			
 			Assert.assertEquals(promoPaisaje.compareTo(promoDegustacion), -1);
 	}
@@ -58,8 +58,8 @@ public class TestcompareTo {
 			Atraccion [] atraccionesAventura = new Atraccion[2];
 			atraccionesAventura[0] = a1; 
 			atraccionesAventura[1] = a7;
-			PromocionAbsoluta promoDegustacion = new PromocionAbsoluta("Promo Gourmet",2,atraccionesDegustacion,"Degustacion",100); //precio 445.10 horas: 6
-			PromocionAbsoluta promoAventura = new PromocionAbsoluta("La gran promo",2,atraccionesAventura,"Paisaje",100); //precio: 1000.50 horas: 3
+			PromocionAbsoluta promoDegustacion = new PromocionAbsoluta("Promo Gourmet",atraccionesDegustacion,"Degustacion",100); //precio 445.10 horas: 6
+			PromocionAbsoluta promoAventura = new PromocionAbsoluta("La gran promo",atraccionesAventura,"Paisaje",100); //precio: 1000.50 horas: 3
 			
 			Assert.assertEquals(promoDegustacion.compareTo(promoAventura), 1);
 	}

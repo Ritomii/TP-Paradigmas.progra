@@ -3,24 +3,33 @@ package sistema.promociones;
 import sistema.atracciones.Atraccion;
 
 public class PromocionCombo extends Promocion {
-	private String nombre_atraccion_gratis;
+	private Atraccion atraccion_gratis;
 
-	public PromocionCombo(String nombre, int cant_atracciones, Atraccion[] atracciones, String tipo_promocion,
-			String nombre_atraccion_gratis) {
-		super(nombre, cant_atracciones, atracciones, tipo_promocion);
-		this.nombre_atraccion_gratis = nombre_atraccion_gratis;
+//	public PromocionCombo(String nombre, Atraccion[] atracciones, String tipo_promocion,String nombre_atraccion_gratis) {
+//		super(nombre, atracciones, tipo_promocion);
+//		this.nombre_atraccion_gratis = nombre_atraccion_gratis;
+//		this.precio_mostrar = this.precio_original;
+//	}
+
+	public PromocionCombo(String nombre, Atraccion[] atracciones, String tipo_promocion, Atraccion atraccion_gratis) {
+		super(nombre, atracciones, tipo_promocion);
+		this.atraccion_gratis = atraccion_gratis;
 		this.precio_mostrar = this.precio_original;
 	}
+	
+	@Override
+	public boolean tieneCupo() {
+		return super.tieneCupo() && this.atraccion_gratis.tieneCupo();
+	}
 
-	public String getAtraccionGratis() {
-		return this.nombre_atraccion_gratis;
+	@Override
+	public void comprar() {
+		super.comprar();
+		this.atraccion_gratis.comprar();
 	}
 
 	@Override
 	public String toString() {
-		String atracciones = this.obtenerAtraccionesIncluidas();
-		return "Promocion:" + nombre + "\n-Atracciones incluidas: " + atracciones + "\n-Atraccion gratuita: "
-				+ nombre_atraccion_gratis + "\n-Duracion=" + duracion + "\n-Precio original: " + precio_original
-				+ "\n-Precio combo: " + precio_mostrar + "\n";
+		return super.toString() + "Atraccion gratis: " + this.atraccion_gratis.getNombre() + "\n";
 	}
 }

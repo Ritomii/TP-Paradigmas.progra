@@ -88,9 +88,9 @@ public class OrdenamientoTest {
 		atr_aventura[0] = a1;
 		atr_aventura[1] = a7;
 		
-		PromocionAbsoluta p1 = new PromocionAbsoluta("Alta montania", 2, atr_paisaje, "Paisaje", 200);
-		PromocionAbsoluta p2 = new PromocionAbsoluta("Ruta los 7 lagos", 2, atr_degustacion, "Paisaje", 100);
-		PromocionAbsoluta p3 = new PromocionAbsoluta("Kick Buttowski", 2, atr_aventura, "Paisaje", 300);
+		PromocionAbsoluta p1 = new PromocionAbsoluta("Alta montania", atr_paisaje, "Paisaje", 200);
+		PromocionAbsoluta p2 = new PromocionAbsoluta("Ruta los 7 lagos", atr_degustacion, "Paisaje", 100);
+		PromocionAbsoluta p3 = new PromocionAbsoluta("Kick Buttowski", atr_aventura, "Paisaje", 300);
 		
 		ordenamientoPromocionEsperado.add(p1);
 		ordenamientoPromocionEsperado.add(p2);
