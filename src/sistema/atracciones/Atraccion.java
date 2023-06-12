@@ -1,5 +1,7 @@
 package sistema.atracciones;
 
+import java.util.Objects;
+
 public class Atraccion implements Comparable<Atraccion> {
 
 	private String nombre;
@@ -47,6 +49,28 @@ public class Atraccion implements Comparable<Atraccion> {
 	@Override
 	public String toString() {
 		return "Atraccion: " + nombre + " | Precio: $" + costo + " | Duracion: " + tiempoPromedio + " horas." + "\n";
+	}
+
+	
+	
+	@Override
+	public int hashCode() {
+		return Objects.hash(costo, cupoDiario, nombre, tiempoPromedio, tipo);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Atraccion other = (Atraccion) obj;
+		return Double.doubleToLongBits(costo) == Double.doubleToLongBits(other.costo) && cupoDiario == other.cupoDiario
+				&& Objects.equals(nombre, other.nombre)
+				&& Double.doubleToLongBits(tiempoPromedio) == Double.doubleToLongBits(other.tiempoPromedio)
+				&& Objects.equals(tipo, other.tipo);
 	}
 
 	@Override

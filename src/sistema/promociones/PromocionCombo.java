@@ -10,7 +10,11 @@ public class PromocionCombo extends Promocion {
 		this.atraccion_gratis = atraccion_gratis;
 		this.precio_mostrar = this.precio_original;
 	}
-	
+
+	public Atraccion getAtraccion_gratis() {
+		return atraccion_gratis;
+	}
+
 	@Override
 	public boolean tieneCupo() {
 		return super.tieneCupo() && this.atraccion_gratis.tieneCupo();

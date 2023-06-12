@@ -54,6 +54,14 @@ public class Promocion implements Comparable<Promocion> {
 	public double getPrecio_mostrar() {
 		return precio_mostrar;
 	}
+	
+	public Atraccion[] getVector_atracciones() {
+		return vector_atracciones;
+	}
+	
+	public String getTipo_promocion() {
+		return tipo_promocion;
+	}
 
 	@Override
 	public int compareTo(Promocion otra) { 

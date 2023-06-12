@@ -15,7 +15,6 @@ public class Inicio {
 		cargados = lectura.leerDatos();
 		consola.mostrar(cargados);
 		arch_salida.escribirSalida(cargados);
-		System.out.println("termine");
 	}
 
 }

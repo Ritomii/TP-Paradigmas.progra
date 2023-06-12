@@ -28,9 +28,19 @@ public class Menu {
 			TreeSet<Promocion> promos_preferidas = carga.getMapa_promos_tipos().get(preferencia);
 			TreeSet<Atraccion> atracciones_preferidas = carga.getMapa_atracciones_tipos().get(preferencia);
 
-			TreeSet<Promocion> promos_no_preferidas = carga.getMapa_no_preferencia_promociones().get(preferencia);
-			TreeSet<Atraccion> atracciones_no_preferidas = carga.getMapa_no_preferencia_atraccion().get(preferencia);
+			TreeSet<Promocion> promos_no_preferidas;
+			TreeSet<Atraccion> atracciones_no_preferidas;
 
+			if (carga.getMapa_no_preferencia_promociones().containsKey(preferencia))
+				promos_no_preferidas = carga.getMapa_no_preferencia_promociones().get(preferencia);
+			else
+				promos_no_preferidas = carga.getMapa_no_preferencia_promociones().get("SinPreferencia");
+
+			if (carga.getMapa_no_preferencia_atraccion().containsKey(preferencia))
+				atracciones_no_preferidas = carga.getMapa_no_preferencia_atraccion().get(preferencia);
+			else
+				atracciones_no_preferidas = carga.getMapa_no_preferencia_atraccion().get("SinPreferencia");
+			
 			System.out.println("\n-----Promociones de su preferencia-----\n");
 			this.ofrecerPromociones(usuario_actual, promos_preferidas, scanner);
 			System.out.println("\n-----Atracciones de su preferencia-----\n");
@@ -51,7 +61,8 @@ public class Menu {
 						usuario_actual.agregarPromocion(promocion_actual);
 				}
 			}
-		System.out.println("-----Lamentablemente no disponemos de promociones que se ajusten a su preferencia-----");
+		else
+			System.out.println("-----Lamentablemente no disponemos de promociones para ofrecerle-----");
 	}
 
 	private void ofrecerAtracciones(Usuario usuario_actual, TreeSet<Atraccion> arbol, Scanner scanner) {
@@ -62,6 +73,8 @@ public class Menu {
 						usuario_actual.agregarAtraccion(atraccion_actual);
 				}
 			}
+		else
+			System.out.println("-----Lamentablemente no disponemos de atracciones para ofrecerle-----");
 	}
 	
 	private boolean mostrarPromocion(Promocion promo, Scanner scanner) {
