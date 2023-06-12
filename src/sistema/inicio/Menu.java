@@ -16,12 +16,29 @@ public class Menu {
 		LinkedList<Usuario> lista_usuarios = carga.getLista_usuarios();
 		String preferencia;
 		
-		System.out.println("\n\tBienvenido a la Tierra Media\n");
+		System.out.println("\t\t⠀⠀⠀⠀⠀⠀⣀⡀⠀⠀⣀⣤⣶⣾⣿⣿⣷⣶⣤⣀⠀⠀⣀⣀⠀⠀⠀⠀⠀⠀\n"
+				+ "\t\t⠀⠀⠀⠀⠀⠜⠉⣿⡆⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⢰⣿⠉⠃⠀⠀⠀⠀⠀\n"
+				+ "\t\t⠀⢀⣤⣴⣦⣄⣴⠟⣸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡎⢻⣦⣠⣴⣦⣄⠀⠀\n"
+				+ "\t\t⠀⡞⠁⣠⣾⢿⣧⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⣽⡿⣷⣄⠈⢷⠀\n"
+				+ "\t\t⠀⣠⣾⠟⠁⢸⣿⠀⠘⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠁⠀⣿⡇⠈⠻⣷⣄⠀\n"
+				+ "\t\t⣰⡿⠁⠀⢀⣾⣏⣾⣄⣰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣇⣰⣷⣹⣷⠀⠀⠈⢿⣆\n"
+				+ "\t\t⣿⡇⠀⢠⣾⠏⢸⣿⣿⣿⣿⠋⢻⣿⣿⣿⣿⡟⠙⣿⣿⣿⣿⡇⠹⣷⡀⠀⢸⣿\n"
+				+ "\t\t⠹⣿⣴⡿⠋⠀⠈⠛⠉⣹⣿⣦⣄⡹⣿⣿⣋⣠⣶⣿⣏⠉⠛⠁⠀⠙⢿⣦⣿⠏\n"
+				+ "\t\t⠀⣸⣿⠿⠿⣿⣾⣿⡿⠿⣿⣿⣿⣿⡆⢰⣿⣿⣿⣿⠿⢿⣿⣶⣿⠿⠿⣻⣇⠀\n"
+				+ "\t\t⠀⣿⡇⢀⣴⣶⣤⣀⣴⣿⠿⣻⡿⣿⣧⣾⣿⢿⣟⠿⣿⣦⣀⣤⣶⣦⠀⢸⣿⠀\n"
+				+ "\t\t⠀⢿⣧⠈⠃⢀⣵⣿⡋⠁⢀⣿⡷⣿⡇⢻⣿⣿⣿⡀⠈⢛⣿⣮⡀⠘⠀⣼⡟⠀\n"
+				+ "\t\t⠀⠈⠻⣷⣤⣟⣋⣿⣧⣴⡿⠋⠀⣿⡇⢸⣿⠀⠙⢿⣦⣼⣿⣙⣻⣤⣾⠟⠁⠀\n"
+				+ "\t\t⠀⠀⠀⠈⢽⣿⠛⢻⣏⢉⣤⣶⣶⣿⠁⠈⣿⣶⣶⣤⡉⣽⡟⠛⣿⡏⠁⠀⠀⠀\n"
+				+ "\t\t⠀⠀⠀⠀⠈⠿⣷⣾⣾⣟⣉⣠⣿⢿⡇⢸⠿⣿⣄⣙⣻⣷⣷⣾⠿⠁⠀⠀⠀⠀\n"
+				+ "\t\t⠀⠀⠀⠀⠀⠀⠀⠀⠙⠻⠿⠛⢁⡼⠃⠘⢦⡈⠛⠿⠟⠃⠀⠀⠀⠀⠀⠀⠀⠀");
+		
+		System.out.println("\n\tBienvenido a la Realidad Distorsionada de Lovecraft\n");
+		
 		System.out.println("---------------------------------------------------------------------");
 		
 		
 		for (Usuario usuario_actual : lista_usuarios) {
-			System.out.println("Nombre del visitante: " + usuario_actual.getNombre() + "\n\n");
+			System.out.println("##########\tNombre del visitante: " + usuario_actual.getNombre() + "\t##########");
 			preferencia = usuario_actual.getPreferencia();
 			// Es el tipo_atraccion que le gusta al usuario
 			
@@ -45,6 +62,9 @@ public class Menu {
 			this.ofrecerAtracciones(usuario_actual, atracciones_preferidas, scanner);
 			this.ofrecerPromociones(usuario_actual, promos_no_preferidas, scanner);
 			this.ofrecerAtracciones(usuario_actual, atracciones_no_preferidas, scanner);
+			System.out.println("Ya se han ofrecido todas las ofertas disponibles para usted.");
+			System.out.println("Muchas gracias por elegirnos!");
+			System.out.println("---------------------------------------------------------------------\n");
 		}
 		
 	}

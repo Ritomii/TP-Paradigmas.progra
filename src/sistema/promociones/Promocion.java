@@ -106,7 +106,7 @@ public class Promocion implements Comparable<Promocion> {
 		for(int i=0;i<this.vector_atracciones.length;i++)
 			texto_atracciones += this.vector_atracciones[i].toString() + "\n";
 		
-		return "\n--------------------\nPromocion: " + nombre + "\nTipo de promocion: " + tipo_promocion + "\nDuracion: " + duracion + " horas"
+		return "\n--------------------\nPromocion: " + nombre + "\nTipo de promocion: " + tipo_promocion + "\nDuracion: " + String.format("%,.2f", duracion) + " horas"
 				+ "\nPrecio original: $" + precio_original + "\nAtracciones incluidas:\n\n" + texto_atracciones;
 	}
 }

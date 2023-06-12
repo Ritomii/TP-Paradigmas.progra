@@ -1,48 +1,149 @@
 Informe de Usuarios:
-Usuario: ClivioTest
-Preferencia: Terror
-Presupuesto restante: 820
-Tiempo restante: 935.0
+Usuario: El Ancestro
+Preferencia: Horror
+Presupuesto restante: 5
+Tiempo restante: 1.7000000000000028
 
 ---------------------------------------
 Compro las siguientes promociones:
 
 --------------------
-Promocion: Promocion 1
+Promocion: Apoteosis de Los Antiguos
 Tipo de promocion: Gratis
-Duracion: 20.0 horas
-Precio original: $30.0
+Duracion: 19,80 horas
+Precio original: $198.0
 Atracciones incluidas:
 
-Atraccion: Atraccion Terror 1 | Precio: $10.0 | Duracion: 10.0 horas.
+Atraccion: Llamado a Cthulhu | Precio: $77.0 | Duracion: 7.7 horas.
 
-Atraccion: Atraccion Terror 2 | Precio: $20.0 | Duracion: 10.0 horas.
+Atraccion: Niebla de Abholos | Precio: $55.0 | Duracion: 5.5 horas.
 
-Atraccion gratis: Atraccion Terror 3
-Ahorro: $40.0
-Precio final: $30.0
+Atraccion: Supernova de Ammutseba | Precio: $66.0 | Duracion: 6.6 horas.
+
+Atraccion gratis: Tumba de la realidad
+Ahorro: $66.0
+Precio final: $198.0
 ---------------------------------------
 Compro las siguientes atracciones:
-Atraccion: Atraccion Terror 3 | Precio: $40.0 | Duracion: 10.0 horas.
-Atraccion: Atraccion Terror 2 | Precio: $20.0 | Duracion: 10.0 horas.
-Atraccion: Atraccion Terror 1 | Precio: $10.0 | Duracion: 10.0 horas.
-Atraccion: Atraccion Degustacion 1 | Precio: $50.0 | Duracion: 5.0 horas.
-Atraccion: Atraccion Misterio 1 | Precio: $30.0 | Duracion: 10.0 horas.
+Atraccion: Eclipse de Apocolothoth | Precio: $47.0 | Duracion: 3.0 horas.
 
 ---------------------------------------
 
-Usuario: FranTest
-Preferencia: Degustacion
-Presupuesto restante: 920
-Tiempo restante: 985.0
+Usuario: El Caballero Rojo
+Preferencia: Perdicion
+Presupuesto restante: 16
+Tiempo restante: 18.0
+
+---------------------------------------
+Compro las siguientes promociones:
+
+--------------------
+Promocion: Amenazas Acechantes
+Tipo de promocion: Absoluta
+Duracion: 8,50 horas
+Precio original: $85.0
+Atracciones incluidas:
+
+Atraccion: Vortex de Aartnna | Precio: $75.0 | Duracion: 7.0 horas.
+
+Atraccion: El ojo de Cyaegha | Precio: $10.0 | Duracion: 1.5 horas.
+
+Precio original: $85.0
+Descuento aplicado: $20,00
+Precio final: $65.0
+
+---------------------------------------
+Compro las siguientes atracciones:
+Atraccion: El ojo de Cyaegha | Precio: $10.0 | Duracion: 1.5 horas.
+Atraccion: Invocacion de Dagon | Precio: $9.0 | Duracion: 2.0 horas.
+
+---------------------------------------
+
+Usuario: El Flagelante
+Preferencia: Prohibido
+Presupuesto restante: 2
+Tiempo restante: 16.5
 
 ---------------------------------------
 El usuario no registra promociones compradas
 
 ---------------------------------------
 Compro las siguientes atracciones:
-Atraccion: Atraccion Degustacion 1 | Precio: $50.0 | Duracion: 5.0 horas.
-Atraccion: Atraccion Misterio 1 | Precio: $30.0 | Duracion: 10.0 horas.
+Atraccion: Bibliotecas de Sfatlicllp | Precio: $18.0 | Duracion: 1.5 horas.
+
+---------------------------------------
+
+Usuario: El Elegido
+Preferencia: Delirio
+Presupuesto restante: 0
+Tiempo restante: 7.0
+
+---------------------------------------
+El usuario no registra promociones compradas
+
+---------------------------------------
+Compro las siguientes atracciones:
+Atraccion: El Color del Espacio | Precio: $45.0 | Duracion: 3.0 horas.
+
+---------------------------------------
+
+Usuario: El Roto
+Preferencia: Perdicion
+Presupuesto restante: 11
+Tiempo restante: 1.5
+
+---------------------------------------
+El usuario no registra promociones compradas
+
+---------------------------------------
+Compro las siguientes atracciones:
+Atraccion: El ojo de Cyaegha | Precio: $10.0 | Duracion: 1.5 horas.
+Atraccion: Invocacion de Dagon | Precio: $9.0 | Duracion: 2.0 horas.
+
+---------------------------------------
+
+Usuario: El Sectario Menor
+Preferencia: Horror
+Presupuesto restante: 0
+Tiempo restante: 5.5
+
+---------------------------------------
+El usuario no registra promociones compradas
+
+---------------------------------------
+Compro las siguientes atracciones:
+Atraccion: Fractura Dimensional | Precio: $25.0 | Duracion: 1.5 horas.
+
+---------------------------------------
+
+Usuario: El Sectario Mayor
+Preferencia: Prohibido
+Presupuesto restante: 5
+Tiempo restante: 41.0
+
+---------------------------------------
+Compro las siguientes promociones:
+
+--------------------
+Promocion: Susurros de lo Oculto
+Tipo de promocion: Gratis
+Duracion: 2,50 horas
+Precio original: $50.0
+Atracciones incluidas:
+
+Atraccion: Lectura del Necronomicon | Precio: $25.0 | Duracion: 1.0 horas.
+
+Atraccion: Fractura Dimensional | Precio: $25.0 | Duracion: 1.5 horas.
+
+Atraccion gratis: Vision del Mas Alla
+Ahorro: $35.0
+Precio final: $50.0
+---------------------------------------
+Compro las siguientes atracciones:
+Atraccion: Vision del Mas Alla | Precio: $35.0 | Duracion: 2.5 horas.
+Atraccion: Fractura Dimensional | Precio: $25.0 | Duracion: 1.5 horas.
+Atraccion: Lectura del Necronomicon | Precio: $25.0 | Duracion: 1.0 horas.
+Atraccion: El ojo de Cyaegha | Precio: $10.0 | Duracion: 1.5 horas.
 
 ---------------------------------------
 
