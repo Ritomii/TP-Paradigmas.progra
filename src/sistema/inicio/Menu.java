@@ -41,13 +41,9 @@ public class Menu {
 			else
 				atracciones_no_preferidas = carga.getMapa_no_preferencia_atraccion().get("SinPreferencia");
 			
-			System.out.println("\n-----Promociones de su preferencia-----\n");
 			this.ofrecerPromociones(usuario_actual, promos_preferidas, scanner);
-			System.out.println("\n-----Atracciones de su preferencia-----\n");
 			this.ofrecerAtracciones(usuario_actual, atracciones_preferidas, scanner);
-			System.out.println("\n-----Promociones que no son de su preferencia-----\n");
 			this.ofrecerPromociones(usuario_actual, promos_no_preferidas, scanner);
-			System.out.println("\n-----Atracciones que no son de su preferencia-----\n");
 			this.ofrecerAtracciones(usuario_actual, atracciones_no_preferidas, scanner);
 		}
 		
@@ -61,8 +57,6 @@ public class Menu {
 						usuario_actual.agregarPromocion(promocion_actual);
 				}
 			}
-		else
-			System.out.println("-----Lamentablemente no disponemos de promociones para ofrecerle-----");
 	}
 
 	private void ofrecerAtracciones(Usuario usuario_actual, TreeSet<Atraccion> arbol, Scanner scanner) {
@@ -73,16 +67,15 @@ public class Menu {
 						usuario_actual.agregarAtraccion(atraccion_actual);
 				}
 			}
-		else
-			System.out.println("-----Lamentablemente no disponemos de atracciones para ofrecerle-----");
 	}
 	
 	private boolean mostrarPromocion(Promocion promo, Scanner scanner) {
 		String letra;
 		boolean es_letra_valida;
 		do {
-			System.out.println("\nDesea comprar la siguiente promocion?\n");
 			System.out.println(promo);
+			System.out.println("\nDesea comprar la siguiente promocion?\n");
+			System.out.println("Ingrese una opcion (S o N):\n");
 			letra = scanner.nextLine();
 			es_letra_valida = letra.equalsIgnoreCase("S") || letra.equalsIgnoreCase("N"); 
 		} while (!es_letra_valida);
@@ -93,8 +86,9 @@ public class Menu {
 		String letra;
 		boolean es_letra_valida;
 		do {
-			System.out.println("\nDesea comprar la siguiente atraccion?\n");
 			System.out.println(atrac);
+			System.out.println("\nDesea comprar la siguiente atraccion?\n");
+			System.out.println("Ingrese una opcion (S o N):\n ");
 			letra = scanner.nextLine();
 			es_letra_valida = letra.equalsIgnoreCase("S") || letra.equalsIgnoreCase("N"); 
 		} while (!es_letra_valida);

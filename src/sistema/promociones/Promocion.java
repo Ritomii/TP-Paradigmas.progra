@@ -5,7 +5,7 @@ import sistema.atracciones.Atraccion;
 public class Promocion implements Comparable<Promocion> {
 	protected String nombre;
 	protected String tipo_promocion;
-	protected int cant_atracciones;
+	//protected int cant_atracciones;
 	protected double duracion;
 	protected double precio_original;
 	protected double precio_mostrar;// final

@@ -27,8 +27,5 @@ public class OfertadorTest {
 		cargados.ordenarNoPreferencias();
 			
 		consola.mostrar(cargados);
-		
-		
 	}
-
 }
