@@ -56,10 +56,16 @@ public class Promocion implements Comparable<Promocion> {
 	}
 
 	@Override
-	public int compareTo(Promocion otra) { // Ascendente por precio, despues horas.
+	public int compareTo(Promocion otra) { 
 		int retorno;
-		if ((retorno = Double.compare(otra.precio_mostrar, this.precio_mostrar)) == 0)
-			return Double.compare(otra.duracion, this.duracion);
+		if ((retorno = Double.compare(otra.precio_mostrar, this.precio_mostrar)) == 0) //Se cambia el orden de los parametros para que el ordenamiento en arbol sea de mayor a menor.
+		{
+			if((retorno = Double.compare(otra.duracion, this.duracion)) == 0) {
+				if((retorno = otra.nombre.compareTo(this.nombre)) == 0) {
+					retorno = otra.tipo_promocion.compareTo(this.tipo_promocion);
+				}
+			}
+		}
 		return retorno;
 	}
 
@@ -92,7 +98,7 @@ public class Promocion implements Comparable<Promocion> {
 		for(int i=0;i<this.vector_atracciones.length;i++)
 			texto_atracciones += this.vector_atracciones[i].toString() + "\n";
 		
-		return "Promocion:\n" + nombre + "\nTipo de promocion: " + tipo_promocion + "\nDuracion:" + duracion + "hrs."
-				+ "\nPrecio: $" + precio_mostrar + "\n---------------\nAtracciones incluidas:\n" + texto_atracciones;
+		return "\n--------------------\nPromocion: " + nombre + "\nPreferencia de promocion: " + tipo_promocion + "\nDuracion: " + duracion + " horas"
+				+ "\nPrecio original: $" + precio_original + "\nAtracciones incluidas:\n\n" + texto_atracciones;
 	}
 }

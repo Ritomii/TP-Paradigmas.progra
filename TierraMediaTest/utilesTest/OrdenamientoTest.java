@@ -2,8 +2,7 @@ package utilesTest;
 
 import org.junit.Assert;
 
-import java.util.ArrayList;
-import java.util.Collections;
+import java.util.TreeSet;
 
 import org.junit.Test;
 
@@ -30,50 +29,41 @@ public class OrdenamientoTest {
 	
 	
 	
-	@Test
-	public void ordenamientoAtracciones() { //Se prueba que el ordenamiento en una estructura de Atracciones sea el correcto.
-		
-		ArrayList<Atraccion> ordenamientoAtraccionEsperado = new ArrayList<Atraccion>();
-		ArrayList <Atraccion> ordenamientoAtraccionReal = new ArrayList<Atraccion>();
-		
-		ordenamientoAtraccionEsperado.add(a5);
-		ordenamientoAtraccionEsperado.add(a2);
-		ordenamientoAtraccionEsperado.add(a3);
-		ordenamientoAtraccionEsperado.add(a1);
-		ordenamientoAtraccionEsperado.add(a4);
-		ordenamientoAtraccionEsperado.add(a9);
-		ordenamientoAtraccionEsperado.add(a10);
-		
-		
-		ordenamientoAtraccionReal.add(a1);
-		ordenamientoAtraccionReal.add(a2);
-		ordenamientoAtraccionReal.add(a3);
-		ordenamientoAtraccionReal.add(a4);
-		ordenamientoAtraccionReal.add(a5);
-		ordenamientoAtraccionReal.add(a9);
-		ordenamientoAtraccionReal.add(a10);
-		
-		for(int i= 0; i < ordenamientoAtraccionReal.size(); i++) {
-			System.out.println(ordenamientoAtraccionReal.get(i));	
-		}
-		
-		System.out.println("----------Ordenando----------");
-		Collections.sort(ordenamientoAtraccionReal);
+	@Test 
+	public void ordenamientoAtracciones() { //Testea que los arboles de atracciones se generen con un orden correcto y ademas testea el toString de Atraccion
+		TreeSet<Atraccion> arbolAtracciones = new TreeSet<Atraccion>();
+		Atraccion [] atraccionesOrdenadas = new Atraccion[10];
+		atraccionesOrdenadas[0] = a5;
+		atraccionesOrdenadas[1] = a2;
+		atraccionesOrdenadas[2] = a6;
+		atraccionesOrdenadas[3] = a3;
+		atraccionesOrdenadas[4] = a1;
+		atraccionesOrdenadas[5] = a4;
+		atraccionesOrdenadas[6] = a9;
+		atraccionesOrdenadas[7] = a7;
+		atraccionesOrdenadas[8] = a10;
+		atraccionesOrdenadas[9] = a8;
 		
 		
-		for(int i= 0; i < ordenamientoAtraccionReal.size(); i++) {
-			System.out.println(ordenamientoAtraccionReal.get(i));	
-		}
+		arbolAtracciones.add(a1);
+		arbolAtracciones.add(a2);
+		arbolAtracciones.add(a3);
+		arbolAtracciones.add(a4);
+		arbolAtracciones.add(a5);
+		arbolAtracciones.add(a6);
+		arbolAtracciones.add(a7);
+		arbolAtracciones.add(a8);
+		arbolAtracciones.add(a9);
+		arbolAtracciones.add(a10);
 		
-		Assert.assertEquals(ordenamientoAtraccionEsperado,ordenamientoAtraccionReal);
-		
+		System.out.println(arbolAtracciones);
+		Assert.assertArrayEquals(atraccionesOrdenadas, arbolAtracciones.toArray());
 	}
-	
-	@Test
-	public void ordenamientoPromociones() { //Se prueba que el ordenamiento en una estructura de Promociones de un tipo especifico sea el correcto.
-		ArrayList<PromocionAbsoluta> ordenamientoPromocionReal = new ArrayList<PromocionAbsoluta>();
-		ArrayList<PromocionAbsoluta> ordenamientoPromocionEsperado = new ArrayList<PromocionAbsoluta>();
 		
+	@Test
+	public void ordenamientoPromociones() { //Testea que los arboles de promociones se generen con un orden correcto y ademas testea el toString de Promocion y sus derivadas.
+		TreeSet<Promocion> arbolPromociones = new TreeSet<Promocion>();
+		Promocion [] promocionesOrdenadas = new Promocion[3];
 		
 		
 		Atraccion [] atr_paisaje = new Atraccion[2];
@@ -89,29 +79,18 @@ public class OrdenamientoTest {
 		atr_aventura[1] = a7;
 		
 		PromocionAbsoluta p1 = new PromocionAbsoluta("Alta montania", atr_paisaje, "Paisaje", 200);
-		PromocionAbsoluta p2 = new PromocionAbsoluta("Ruta los 7 lagos", atr_degustacion, "Paisaje", 100);
-		PromocionAbsoluta p3 = new PromocionAbsoluta("Kick Buttowski", atr_aventura, "Paisaje", 300);
+		PromocionCombo p2 = new PromocionCombo("Ruta los 7 lagos", atr_degustacion, "Paisaje", a10);
+		PromocionPorcentual p3 = new PromocionPorcentual("Kick Buttowski", atr_aventura, "Paisaje", 20);
 		
-		ordenamientoPromocionEsperado.add(p1);
-		ordenamientoPromocionEsperado.add(p2);
-		ordenamientoPromocionEsperado.add(p3);
+		promocionesOrdenadas[0] = p2;
+		promocionesOrdenadas[1] = p3;
+		promocionesOrdenadas[2] = p1;
 		
+		arbolPromociones.add(p1);
+		arbolPromociones.add(p2);
+		arbolPromociones.add(p3);
 		
-		ordenamientoPromocionReal.add(p3);
-		ordenamientoPromocionReal.add(p1);
-		ordenamientoPromocionReal.add(p2);
-		
-		for(int i = 0; i < ordenamientoPromocionReal.size(); i++) {
-			System.out.println(ordenamientoPromocionReal.get(i));
-		}
-		
-		System.out.println("----------Ordenando----------");
-		Collections.sort(ordenamientoPromocionReal);
-
-		for(int i = 0; i < ordenamientoPromocionReal.size(); i++) {
-			System.out.println(ordenamientoPromocionReal.get(i));
-		}
-		
-		Assert.assertEquals(ordenamientoPromocionReal, ordenamientoPromocionEsperado);
+		System.out.println(arbolPromociones);
+		Assert.assertArrayEquals(promocionesOrdenadas, arbolPromociones.toArray());
 	}
 }

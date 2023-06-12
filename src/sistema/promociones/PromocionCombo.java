@@ -5,12 +5,6 @@ import sistema.atracciones.Atraccion;
 public class PromocionCombo extends Promocion {
 	private Atraccion atraccion_gratis;
 
-//	public PromocionCombo(String nombre, Atraccion[] atracciones, String tipo_promocion,String nombre_atraccion_gratis) {
-//		super(nombre, atracciones, tipo_promocion);
-//		this.nombre_atraccion_gratis = nombre_atraccion_gratis;
-//		this.precio_mostrar = this.precio_original;
-//	}
-
 	public PromocionCombo(String nombre, Atraccion[] atracciones, String tipo_promocion, Atraccion atraccion_gratis) {
 		super(nombre, atracciones, tipo_promocion);
 		this.atraccion_gratis = atraccion_gratis;
@@ -30,6 +24,6 @@ public class PromocionCombo extends Promocion {
 
 	@Override
 	public String toString() {
-		return super.toString() + "Atraccion gratis: " + this.atraccion_gratis.getNombre() + "\n";
+		return super.toString() + "Atraccion gratis: " + this.atraccion_gratis.getNombre() + "\nAhorro: $"+ atraccion_gratis.getCosto() +"\nPrecio final: $" + this.precio_mostrar;
 	}
 }
