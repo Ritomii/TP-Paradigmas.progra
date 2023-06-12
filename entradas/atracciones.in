@@ -1,21 +1,26 @@
-4
-Atraccion 1
+5
+Atraccion Terror 1
 10
 10.0
-1
+2
 Terror
-Atraccion 2
+Atraccion Terror 2
 20
 10.0
-1
+2
 Terror
-Atraccion 3
+Atraccion Misterio 1
 30
 10.0
-1
+2
 Misterio
-Atraccion 4
+Atraccion Terror 3
 40
 10.0
-1
+2
 Terror
+Atraccion Degustacion 1
+50
+5.0
+2
+Degustacion

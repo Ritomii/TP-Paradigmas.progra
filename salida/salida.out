@@ -1,27 +1,48 @@
 Informe de Usuarios:
 Usuario: ClivioTest
 Preferencia: Terror
-Presupuesto restante: 940
-Tiempo restante: 970.0
+Presupuesto restante: 850
+Tiempo restante: 955.0
 
 ---------------------------------------
 Compro las siguientes promociones:
-Promocion:
-Promocion 1
-Tipo de promocion: Gratis
-Duracion:20.0hrs.
-Precio: $30.0
----------------
+
+--------------------
+Promocion: Promocion 1
+Preferencia de promocion: Gratis
+Duracion: 20.0 horas
+Precio original: $30.0
 Atracciones incluidas:
-Atraccion:Atraccion 1|Precio: $10.0|Duracion: 10.0hrs.
 
-Atraccion:Atraccion 2|Precio: $20.0|Duracion: 10.0hrs.
+Atraccion: Atraccion Terror 1 | Precio: $10.0 | Duracion: 10.0 horas.
 
-Atraccion gratis: Atraccion 4
+Atraccion: Atraccion Terror 2 | Precio: $20.0 | Duracion: 10.0 horas.
+
+Atraccion gratis: Atraccion Terror 3
+Ahorro: $40.0
+Precio final: $30.0
+---------------------------------------
+Compro las siguientes atracciones:
+Atraccion: Atraccion Terror 3 | Precio: $40.0 | Duracion: 10.0 horas.
+Atraccion: Atraccion Degustacion 1 | Precio: $50.0 | Duracion: 5.0 horas.
+Atraccion: Atraccion Misterio 1 | Precio: $30.0 | Duracion: 10.0 horas.
+
+---------------------------------------
+
+Usuario: FranTest
+Preferencia: Degustacion
+Presupuesto restante: 890
+Tiempo restante: 965.0
+
+---------------------------------------
+El usuario no registra promociones compradas
 
 ---------------------------------------
 Compro las siguientes atracciones:
-Atraccion:Atraccion 3|Precio: $30.0|Duracion: 10.0hrs.
+Atraccion: Atraccion Degustacion 1 | Precio: $50.0 | Duracion: 5.0 horas.
+Atraccion: Atraccion Misterio 1 | Precio: $30.0 | Duracion: 10.0 horas.
+Atraccion: Atraccion Terror 2 | Precio: $20.0 | Duracion: 10.0 horas.
+Atraccion: Atraccion Terror 1 | Precio: $10.0 | Duracion: 10.0 horas.
 
 ---------------------------------------
 

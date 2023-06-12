@@ -69,14 +69,17 @@ public class Datos {
 	public void ordenarNoPreferencias() {
 		this.mapa_no_preferencia_promociones = new HashMap<String, TreeSet<Promocion>>();
 		this.mapa_no_preferencia_atraccion = new HashMap<String, TreeSet<Atraccion>>();
-		String[] tipos = this.mapa_promos_tipos.keySet().toArray(new String[mapa_promos_tipos.size()]);
+		
+		String[] tipos_promos = this.mapa_promos_tipos.keySet().toArray(new String[mapa_promos_tipos.size()]);
+		String[] tipos_atraccion = this.mapa_atracciones_tipos.keySet().toArray(new String[mapa_atracciones_tipos.size()]);
+		
 		// contiene todas las preferencias, los tipo_atraccion
-		for (int i = 0; i < tipos.length; i++) {
-			this.mapa_no_preferencia_promociones.put(tipos[i], this.obtenerArbolPromocionSinTipo(tipos[i]));
+		for (int i = 0; i < tipos_promos.length; i++) {
+			this.mapa_no_preferencia_promociones.put(tipos_promos[i], this.obtenerArbolPromocionSinTipo(tipos_promos[i]));
 		}
 
-		for (int i = 0; i < tipos.length; i++) {
-			this.mapa_no_preferencia_atraccion.put(tipos[i], this.obtenerArbolAtraccionSinTipo(tipos[i]));
+		for (int i = 0; i < tipos_atraccion.length; i++) {
+			this.mapa_no_preferencia_atraccion.put(tipos_atraccion[i], this.obtenerArbolAtraccionSinTipo(tipos_atraccion[i]));
 		}
 	}
 

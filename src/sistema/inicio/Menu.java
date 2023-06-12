@@ -75,7 +75,7 @@ public class Menu {
 		String letra;
 		boolean es_letra_valida;
 		do {
-			System.out.println("\nDesea comprar la siguiente promocion?\n");
+			System.out.println("\nDesea comprar la siguiente atraccion?\n");
 			System.out.println(atrac);
 			letra = scanner.nextLine();
 			es_letra_valida = letra.equalsIgnoreCase("S") || letra.equalsIgnoreCase("N"); 
