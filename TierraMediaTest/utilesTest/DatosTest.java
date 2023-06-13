@@ -48,11 +48,12 @@ public class DatosTest {
 		TreeSet<Promocion> arbol_promo = new TreeSet<>();
 		arbol_promo.add(new PromocionAbsoluta("PromoInutil", vector_prueba, "Absoluta", 50));
 		
-		mapa_atracciones_tipos.put("Pref A", arbo_pref_A);
+		mapa_atracciones_tipos.put("Pref A", arbo_pref_A);// añade al mapa un par <Clave,Valor>
 		mapa_atracciones_tipos.put("Pref B", arbo_pref_B);
 		mapa_atracciones_tipos.put("Pref C", arbo_pref_C);
 		
-		mapa_promos_tipos.put("Pref A", arbol_promo);
+		mapa_promos_tipos.put("Pref A", arbol_promo);// este único arbol solo tiene una Promocion
+		// con vector_atracciones de preferencia A
 		
 		datos_testing.setMapa_atracciones_tipos(mapa_atracciones_tipos);
 		datos_testing.setMapa_promos_tipos(mapa_promos_tipos);

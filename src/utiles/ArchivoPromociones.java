@@ -28,7 +28,7 @@ public class ArchivoPromociones extends Archivo {
         
         for (int i = 0; i < cant; i++) {
             nombre_promocion = scanner.nextLine();
-            preferencia = scanner.nextLine();// NO hace falta
+            preferencia = scanner.nextLine();
             cant_atracciones = scanner.nextInt();
             scanner.nextLine();
             Atraccion[] atracciones = new Atraccion[cant_atracciones];
@@ -41,7 +41,6 @@ public class ArchivoPromociones extends Archivo {
             random = scanner.nextLine();// Aca llega el descuento, el precio_absoluto o el nombre_atraccion_gratuita
             cargada = generarPromocion(nombre_promocion, preferencia, tipo_promocion, atracciones, random, carga);
             this.cargarMapaTipos(mapa_promos_tipos, cargada, preferencia, tipo_promocion);
-            // Para la preferencia : atracciones[0].getTipo()
         }
         carga.setMapa_promos_tipos(mapa_promos_tipos);
     }
@@ -52,7 +51,7 @@ public class ArchivoPromociones extends Archivo {
             mapa.put(tipo, new TreeSet<Promocion>());
         mapa.get(tipo).add(cargada);// Obtener el TreeSet de ese tipo_atraccion
         // y cargar la promocion a dicho TreeSet
-    }// SIN CAMBIOS
+    }
     
     private Promocion generarPromocion(String nombre_promocion, String preferencia, String tipo,
             Atraccion[] atracciones, String random, Datos carga) {

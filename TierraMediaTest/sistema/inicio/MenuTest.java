@@ -1,5 +1,6 @@
 package sistema.inicio;
 
+import java.util.LinkedList;
 import java.util.TreeSet;
 
 //import static org.junit.Assert.*;
@@ -35,36 +36,43 @@ public class MenuTest {
 	@Test
 	public void mostrarOrdenDeDatosCargados() {
 		Datos carga = cargarDatos();
+		LinkedList<Promocion> ordenPromos = new LinkedList<Promocion>();
 		System.out.println("-------------ORDEN DE PROMOCIONES-----------------");
 		for(String tipo_atraccion : carga.getMapa_promos_tipos().keySet()) {
 			System.out.println("Para el tipo: "+ tipo_atraccion);
 			for(Promocion p : carga.getMapa_promos_tipos().get(tipo_atraccion)) {
-				System.out.println(p);
-				System.out.println("-------------------------------------------");
+				ordenPromos.add(p);
 			}
+			System.out.println(ordenPromos);
+			System.out.println("-------------------------------------------");
+			ordenPromos.clear();
 		}
+		
+		LinkedList<Atraccion> ordenAtracciones = new LinkedList<Atraccion>();
 		System.out.println("-------------ORDEN DE ATRACCIONES-----------------");
 		for(String tipo_atraccion : carga.getMapa_atracciones_tipos().keySet()) {
 			System.out.println("Para el tipo: "+ tipo_atraccion);
 			for(Atraccion a : carga.getMapa_atracciones_tipos().get(tipo_atraccion)) {
-				System.out.println(a);
-				System.out.println("-------------------------------------------");
+				ordenAtracciones.add(a);
 			}
+			System.out.println(ordenAtracciones);
+			System.out.println("-------------------------------------------");
+			ordenAtracciones.clear();
 		}
 	}
-	
+
 	@Test
 	public void mostrarPreferenciasDelVisitante() {
 		Datos carga = cargarDatos();
 		String preferencia;
 		for (Usuario u : carga.getLista_usuarios()) {
 			preferencia = u.getPreferencia();
-			System.out.println(u.getNombre() + " con preferencia: " + preferencia);
+			System.out.println("[" + u.getNombre() + "] con preferencia: " + "[" + preferencia + "]");
 			TreeSet<Promocion> promos_preferidas = carga.getMapa_promos_tipos().get(preferencia);
 			TreeSet<Atraccion> atracciones_preferidas = carga.getMapa_atracciones_tipos().get(preferencia);
-			System.out.println("Promos de su interes:");
+			System.out.println("-----------> Promos de su interes: <-----------");
 			System.out.println(promos_preferidas);
-			System.out.println("Atracciones de su interes:");
+			System.out.println("-----------> Atracciones de su interes: <-----------");
 			System.out.println(atracciones_preferidas);
 			System.out.println("------------------------------------------------------");
 		}
@@ -76,13 +84,13 @@ public class MenuTest {
 		String preferencia;
 		for (Usuario u : carga.getLista_usuarios()) {
 			preferencia = u.getPreferencia();
-			System.out.println(u.getNombre() + " con preferencia: " + preferencia);
+			System.out.println("[" + u.getNombre() + "] con preferencia: " + "[" + preferencia + "]");
 			TreeSet<Promocion> promos_no_preferidas = carga.getMapa_no_preferencia_promociones().get(preferencia);
 			TreeSet<Atraccion> atracciones_no_preferidas = carga.getMapa_no_preferencia_atraccion().get(preferencia);
-			System.out.println("Promos que NO son de su interes:");
+			System.out.println("-----------> Promos que NO son de su interes: <-----------" );
 			System.out.println(promos_no_preferidas);
-			System.out.println("------------------------------------------------------");
-			System.out.println("Atracciones que NO son de su interes:");
+			System.out.println("------------------------------------------------------\n");
+			System.out.println("-----------> Atracciones que NO son de su interes: <-----------");
 			System.out.println(atracciones_no_preferidas);
 			System.out.println("------------------------------------------------------");
 		}

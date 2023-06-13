@@ -1,6 +1,6 @@
 package sistema.inicio;
 
-import static org.junit.Assert.*;
+//import static org.junit.Assert.*;
 
 import org.junit.Test;
 
@@ -8,6 +8,7 @@ import utiles.ArchivoUsuarios;
 import utiles.ArchivoAtracciones;
 import utiles.ArchivoPromociones;
 import utiles.Datos;
+
 public class OfertadorTest {
 	
 	@Test

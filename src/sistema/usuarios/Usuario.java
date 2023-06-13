@@ -13,7 +13,7 @@ public class Usuario {
 	private int dinero;
 	private double tiempo;
 
-	HashSet<Atraccion> set_atracciones_aceptadas = new HashSet<Atraccion>();
+	HashSet<String> set_atracciones_aceptadas = new HashSet<String>();
 	ArrayList<Promocion> lista_promociones = new ArrayList<Promocion>();
 	ArrayList<Atraccion> lista_atracciones = new ArrayList<Atraccion>();
 	
@@ -84,25 +84,14 @@ public class Usuario {
 				&& !this.tieneAceptada(promo);
 	}
 	
-//	private boolean tieneAceptada(Promocion promo) {
-//		boolean tiene_aceptada = false;
-//		String[] nombres_atracciones = promo.obtenerNombresAtracciones();
-//		for (int i = 0; i < nombres_atracciones.length && !tiene_aceptada; i++) {
-//			if(set_atracciones_aceptadas.contains(nombres_atracciones[i]))
-//				tiene_aceptada = true;
-//		}
-//		return tiene_aceptada;
-//	}
-	
 	private boolean tieneAceptada(Promocion promo) {
 		boolean tiene_aceptada = false;
 		Atraccion[] atracciones_promo = promo.getVector_atracciones();
 		
 		for (int i = 0; i < atracciones_promo.length && !tiene_aceptada; i++) {
-			if(set_atracciones_aceptadas.contains(atracciones_promo[i]))
+			if(set_atracciones_aceptadas.contains(atracciones_promo[i].getNombre()))
 				tiene_aceptada = true;
 		}
-		
 		return tiene_aceptada;
 	}
 	
@@ -111,18 +100,17 @@ public class Usuario {
 		Atraccion[] atracciones_promo = promo.getVector_atracciones();
 		
 		for (int i = 0; i < atracciones_promo.length; i++) {
-			this.set_atracciones_aceptadas.add(atracciones_promo[i]);
+			this.set_atracciones_aceptadas.add(atracciones_promo[i].getNombre());
 		}
 		
 		if(promo.getTipo_promocion().equals("Gratis")) {
 			Atraccion gratis_incluida = ((PromocionCombo) promo).getAtraccion_gratis();
-			this.set_atracciones_aceptadas.add(gratis_incluida);
+			this.set_atracciones_aceptadas.add(gratis_incluida.getNombre());
 		}
 		
 		this.dinero -= promo.getPrecio_mostrar();
 		this.tiempo -= promo.getDuracion();
 		promo.comprar();
-		
 	}
 	
 	public boolean puedeComprarAtraccion(Atraccion atraccion) {
@@ -133,11 +121,11 @@ public class Usuario {
 	}
 	
 	private boolean tieneAceptada(Atraccion atraccion) {
-		return this.set_atracciones_aceptadas.contains(atraccion);
+		return this.set_atracciones_aceptadas.contains(atraccion.getNombre());
 	}
 	
 	public void agregarAtraccion(Atraccion atraccion) {
-		this.set_atracciones_aceptadas.add(atraccion);
+		this.set_atracciones_aceptadas.add(atraccion.getNombre());
 		this.lista_atracciones.add(atraccion);
 		this.dinero -= atraccion.getCosto();
 		this.tiempo -= atraccion.getTiempoPromedio();

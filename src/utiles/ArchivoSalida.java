@@ -14,8 +14,6 @@ public class ArchivoSalida {
 	public void escribirSalida(Datos cargados) {		
 		FileWriter file = null;
 		PrintWriter escritor = null;
-
-		
 		
 		try {
 			file = new FileWriter(RUTA_SALIDA);
@@ -34,7 +32,6 @@ public class ArchivoSalida {
 				}
 			}
 		}
-		
 	}
 	
 	private void informeUsuarios(LinkedList<Usuario> lista_usuarios, PrintWriter escritor) {
