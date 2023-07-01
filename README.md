@@ -8,11 +8,12 @@
 
 3- Se mostraran por consola las promociones y atracciones que se le ofreceran al usuario.
 
-4- Las mismas se pueden aceptar y rechazar y al final se mostrara un informe final de las compras de los usuarios.
+4- Las mismas se pueden aceptar y rechazar y al final se creara un archivo de salida que contiene un informe final con las compras de los usuarios.
 
 _***TIPS:***_
 
 - Los datos de entrada se encuentran en la carpeta "entradas" y se cargan de manera automatica al correr el proyecto.
+- Las Atracciones y Promociones solo puede ser compradas si: El Usuario tiene dinero y tiempo, y la atraccion tiene cupo suficiente.
 
 --- Integrantes del Equipo ---
 Apellido, Nombre | DNI
