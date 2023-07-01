@@ -38,21 +38,21 @@ public class MenuTest {
 		Datos carga = cargarDatos();
 		LinkedList<Promocion> ordenPromos = new LinkedList<Promocion>();
 		System.out.println("-------------ORDEN DE PROMOCIONES-----------------");
-		for(String tipo_atraccion : carga.getMapa_promos_tipos().keySet()) {
-			System.out.println("Para el tipo: "+ tipo_atraccion);
-			for(Promocion p : carga.getMapa_promos_tipos().get(tipo_atraccion)) {
+		for (String tipo_atraccion : carga.getMapa_promos_tipos().keySet()) {
+			System.out.println("Para el tipo: " + tipo_atraccion);
+			for (Promocion p : carga.getMapa_promos_tipos().get(tipo_atraccion)) {
 				ordenPromos.add(p);
 			}
 			System.out.println(ordenPromos);
 			System.out.println("-------------------------------------------");
 			ordenPromos.clear();
 		}
-		
+
 		LinkedList<Atraccion> ordenAtracciones = new LinkedList<Atraccion>();
 		System.out.println("-------------ORDEN DE ATRACCIONES-----------------");
-		for(String tipo_atraccion : carga.getMapa_atracciones_tipos().keySet()) {
-			System.out.println("Para el tipo: "+ tipo_atraccion);
-			for(Atraccion a : carga.getMapa_atracciones_tipos().get(tipo_atraccion)) {
+		for (String tipo_atraccion : carga.getMapa_atracciones_tipos().keySet()) {
+			System.out.println("Para el tipo: " + tipo_atraccion);
+			for (Atraccion a : carga.getMapa_atracciones_tipos().get(tipo_atraccion)) {
 				ordenAtracciones.add(a);
 			}
 			System.out.println(ordenAtracciones);
@@ -87,7 +87,7 @@ public class MenuTest {
 			System.out.println("[" + u.getNombre() + "] con preferencia: " + "[" + preferencia + "]");
 			TreeSet<Promocion> promos_no_preferidas = carga.getMapa_no_preferencia_promociones().get(preferencia);
 			TreeSet<Atraccion> atracciones_no_preferidas = carga.getMapa_no_preferencia_atraccion().get(preferencia);
-			System.out.println("-----------> Promos que NO son de su interes: <-----------" );
+			System.out.println("-----------> Promos que NO son de su interes: <-----------");
 			System.out.println(promos_no_preferidas);
 			System.out.println("------------------------------------------------------\n");
 			System.out.println("-----------> Atracciones que NO son de su interes: <-----------");

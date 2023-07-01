@@ -14,10 +14,10 @@ public abstract class Archivo {
 			scanner = new Scanner(file);
 
 			scanner.useLocale(new Locale("es_AR"));
-			
+
 			int cant = scanner.nextInt();
 			scanner.nextLine();
-			
+
 			cargarFormato(cant, carga, scanner);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
@@ -25,6 +25,6 @@ public abstract class Archivo {
 			scanner.close();
 		}
 	}
-	
+
 	protected abstract void cargarFormato(int cant, Datos carga, Scanner scanner);
 }

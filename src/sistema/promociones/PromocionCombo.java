@@ -28,6 +28,7 @@ public class PromocionCombo extends Promocion {
 
 	@Override
 	public String toString() {
-		return super.toString() + "Atraccion gratis: " + this.atraccion_gratis.getNombre() + "\nAhorro: $"+ atraccion_gratis.getCosto() +"\nPrecio final: $" + this.precio_mostrar;
+		return super.toString() + "Atraccion gratis: " + this.atraccion_gratis.getNombre() + "\nAhorro: $"
+				+ atraccion_gratis.getCosto() + "\nPrecio final: $" + this.precio_mostrar;
 	}
 }

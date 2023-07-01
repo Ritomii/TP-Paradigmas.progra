@@ -11,7 +11,7 @@ public class Inicio {
 		ArchivoSalida arch_salida = new ArchivoSalida();
 		Menu consola = new Menu();
 		Datos cargados;
-		
+
 		cargados = lectura.leerDatos();
 		consola.mostrar(cargados);
 		arch_salida.escribirSalida(cargados);

@@ -5,8 +5,8 @@ import java.util.Scanner;
 
 import sistema.usuarios.Usuario;
 
-public class ArchivoUsuarios extends Archivo{
-	
+public class ArchivoUsuarios extends Archivo {
+
 	@Override
 	protected void cargarFormato(int cant, Datos carga, Scanner scanner) {
 		LinkedList<Usuario> lista_usuarios = new LinkedList<Usuario>();

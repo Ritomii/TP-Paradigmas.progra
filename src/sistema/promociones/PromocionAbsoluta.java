@@ -2,16 +2,18 @@ package sistema.promociones;
 
 import sistema.atracciones.Atraccion;
 
-public class PromocionAbsoluta extends Promocion{
-	
-    public PromocionAbsoluta(String nombre, Atraccion[] atracciones, String tipo_promocion, double precio_absoluto) {
-        super(nombre, atracciones, tipo_promocion);
-        this.precio_mostrar = precio_absoluto;
-    }
-	
+public class PromocionAbsoluta extends Promocion {
+
+	public PromocionAbsoluta(String nombre, Atraccion[] atracciones, String tipo_promocion, double precio_absoluto) {
+		super(nombre, atracciones, tipo_promocion);
+		this.precio_mostrar = precio_absoluto;
+	}
+
 	@Override
 	public String toString() {
-		return super.toString() + "Descuento aplicado: $" + String.format("%,.2f", (this.precio_original - this.precio_mostrar)) + "\nPrecio final: $" + this.precio_mostrar  + "\n";
+		return super.toString() + "Descuento aplicado: $"
+				+ String.format("%,.2f", (this.precio_original - this.precio_mostrar)) + "\nPrecio final: $"
+				+ this.precio_mostrar + "\n";
 	}
-	
+
 }

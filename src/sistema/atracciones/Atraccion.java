@@ -34,25 +34,19 @@ public class Atraccion implements Comparable<Atraccion> {
 		return this.tiempoPromedio;
 	}
 
-	public int getCupoDiario() {
-		return this.cupoDiario;
-	}
-
 	public boolean tieneCupo() {
 		return this.cupoDiario > 0;
 	}
-	
+
 	public void comprar() {
 		this.cupoDiario--;
 	}
-	
+
 	@Override
 	public String toString() {
 		return "Atraccion: " + nombre + " | Precio: $" + costo + " | Duracion: " + tiempoPromedio + " horas." + "\n";
 	}
 
-	
-	
 	@Override
 	public int hashCode() {
 		return Objects.hash(costo, cupoDiario, nombre, tiempoPromedio, tipo);
@@ -76,9 +70,9 @@ public class Atraccion implements Comparable<Atraccion> {
 	@Override
 	public int compareTo(Atraccion otra) {
 		int retorno;
-		if((retorno = Double.compare(otra.costo, this.costo)) == 0) 
-			if((retorno = Double.compare(otra.tiempoPromedio,this.tiempoPromedio)) ==0 ) {
-				if((retorno = this.nombre.compareTo(otra.nombre)) == 0) {
+		if ((retorno = Double.compare(otra.costo, this.costo)) == 0)
+			if ((retorno = Double.compare(otra.tiempoPromedio, this.tiempoPromedio)) == 0) {
+				if ((retorno = this.nombre.compareTo(otra.nombre)) == 0) {
 					retorno = this.tipo.compareTo(otra.tipo);
 				}
 			}

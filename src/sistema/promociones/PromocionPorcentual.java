@@ -13,10 +13,6 @@ public class PromocionPorcentual extends Promocion {
 		this.porcentaje = porcentaje;
 	}
 
-	public double getDescuento() {
-		return this.descuento;
-	}
-
 	@Override
 	public String toString() {
 		return super.toString() + "Porcentaje de descuento: % " + this.porcentaje + "\nAhorro: $"

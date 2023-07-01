@@ -58,7 +58,8 @@ public class OrdenamientoTest {
 
 	@Test
 	public void ordenamientoPromociones() { // Testea que los arboles de promociones se generen
-		// con un orden correcto y ademas testea el toString de Promocion y sus derivadas.
+		// con un orden correcto y ademas testea el toString de Promocion y sus
+		// derivadas.
 		TreeSet<Promocion> arbolPromociones = new TreeSet<Promocion>();
 		Promocion[] promocionesOrdenadas = new Promocion[3];
 

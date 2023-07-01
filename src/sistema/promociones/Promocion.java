@@ -40,7 +40,8 @@ public class Promocion implements Comparable<Promocion> {
 	@Override
 	public int compareTo(Promocion otra) {
 		int retorno;
-		// Se cambia el orden de los parametros para que el ordenamiento en arbol sea de mayor a menor.
+		// Se cambia el orden de los parametros para que el ordenamiento en arbol sea de
+		// mayor a menor.
 		if ((retorno = Double.compare(otra.precio_mostrar, this.precio_mostrar)) == 0) {
 			if ((retorno = Double.compare(otra.duracion, this.duracion)) == 0) {
 				if ((retorno = otra.nombre.compareTo(this.nombre)) == 0) {

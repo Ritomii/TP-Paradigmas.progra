@@ -19,11 +19,11 @@ public class TestcompareTo {
 	Atraccion a10 = new Atraccion("Fogon", 200.0, 3.00, 10, "Degustacion");
 
 	@Test
-	public void promo1Mayor() { 
+	public void promo1Mayor() {
 		Atraccion[] atraccionesPaisaje = new Atraccion[2];
 		atraccionesPaisaje[0] = a2;
 		atraccionesPaisaje[1] = a3;
-		
+
 		Atraccion[] atraccionesDegustacion = new Atraccion[2];
 		atraccionesDegustacion[0] = a4;
 		atraccionesDegustacion[1] = a9;
