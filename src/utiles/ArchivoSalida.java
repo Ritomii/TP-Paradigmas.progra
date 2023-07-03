@@ -10,7 +10,7 @@ import sistema.usuarios.Usuario;
 public class ArchivoSalida {
 	private static final String RUTA_SALIDA = "./salida/salida.out";
 
-	public void escribirSalida(Datos cargados) {
+	public void escribirSalida(Datos datos) {
 		FileWriter file = null;
 		PrintWriter escritor = null;
 
@@ -18,7 +18,7 @@ public class ArchivoSalida {
 			file = new FileWriter(RUTA_SALIDA);
 			escritor = new PrintWriter(file);
 
-			this.informeUsuarios(cargados.getLista_usuarios(), escritor);
+			this.informeUsuarios(datos.getLista_usuarios(), escritor);
 
 		} catch (Exception e) {
 			e.printStackTrace();

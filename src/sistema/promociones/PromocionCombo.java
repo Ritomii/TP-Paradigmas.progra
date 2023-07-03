@@ -16,6 +16,11 @@ public class PromocionCombo extends Promocion {
 	}
 
 	@Override
+	public double getDuracion() {
+		return duracion + this.atraccion_gratis.getTiempoPromedio();
+	}
+	
+	@Override
 	public boolean tieneCupo() {
 		return super.tieneCupo() && this.atraccion_gratis.tieneCupo();
 	}
