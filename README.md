@@ -29,3 +29,5 @@ Penafiel Huayta, Abigail Karina | 41913506
 Ponti, Maite Carolina | 39986987
 
 Rosano, Matias Agustin | 43570765
+
+![Realidad_distorsionada_UML](https://github.com/Ritomii/TP-Paradigmas.progra/assets/102634239/889b99f3-01db-4e6a-bd2d-def1cfebc3ac)
