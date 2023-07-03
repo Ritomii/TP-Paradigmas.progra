@@ -2,7 +2,7 @@
 
 ## Ejecucion del Proyecto:
 
-1- Una vez descargado el proyecto dirigirse al package "sistema.inicio" y luego a la clase "inicio.java"
+1- Una vez descargado el proyecto dirigirse al package "sistema.inicio" y luego a la clase "inicio.java".
 
 2- Parado en la clase de Inicio, correr el proyecto.
 
