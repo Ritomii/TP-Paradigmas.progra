@@ -7,13 +7,26 @@ import java.util.TreeSet;
 import sistema.atracciones.Atraccion;
 import sistema.promociones.Promocion;
 import sistema.usuarios.Usuario;
+import utiles.ArchivoSalida;
 import utiles.Datos;
+import utiles.Lector;
 
 public class Menu {
-	public void mostrar(Datos carga) {
+
+	private Lector lectura;
+	private ArchivoSalida arch_salida;
+	private Datos datos;
+
+	public Menu() {
+		this.lectura = new Lector();
+		this.arch_salida = new ArchivoSalida();
+		this.datos = this.lectura.leerDatos();
+	}
+
+	public void ofertar() {
 		Scanner scanner = new Scanner(System.in);
 
-		LinkedList<Usuario> lista_usuarios = carga.getLista_usuarios();
+		LinkedList<Usuario> lista_usuarios = this.datos.getLista_usuarios();
 		String preferencia;
 
 		System.out.println("\n\tBienvenido a la Realidad Distorsionada de Lovecraft\n");
@@ -25,21 +38,21 @@ public class Menu {
 			preferencia = usuario_actual.getPreferencia();
 			// Es el tipo_atraccion que le gusta al usuario
 
-			TreeSet<Promocion> promos_preferidas = carga.getMapa_promos_tipos().get(preferencia);
-			TreeSet<Atraccion> atracciones_preferidas = carga.getMapa_atracciones_tipos().get(preferencia);
+			TreeSet<Promocion> promos_preferidas = this.datos.getMapa_promos_tipos().get(preferencia);
+			TreeSet<Atraccion> atracciones_preferidas = this.datos.getMapa_atracciones_tipos().get(preferencia);
 
 			TreeSet<Promocion> promos_no_preferidas;
 			TreeSet<Atraccion> atracciones_no_preferidas;
 
-			if (carga.getMapa_no_preferencia_promociones().containsKey(preferencia))
-				promos_no_preferidas = carga.getMapa_no_preferencia_promociones().get(preferencia);
+			if (this.datos.getMapa_no_preferencia_promociones().containsKey(preferencia))
+				promos_no_preferidas = this.datos.getMapa_no_preferencia_promociones().get(preferencia);
 			else
-				promos_no_preferidas = carga.getMapa_no_preferencia_promociones().get("SinPreferencia");
+				promos_no_preferidas = this.datos.getMapa_no_preferencia_promociones().get("SinPreferencia");
 
-			if (carga.getMapa_no_preferencia_atraccion().containsKey(preferencia))
-				atracciones_no_preferidas = carga.getMapa_no_preferencia_atraccion().get(preferencia);
+			if (this.datos.getMapa_no_preferencia_atraccion().containsKey(preferencia))
+				atracciones_no_preferidas = this.datos.getMapa_no_preferencia_atraccion().get(preferencia);
 			else
-				atracciones_no_preferidas = carga.getMapa_no_preferencia_atraccion().get("SinPreferencia");
+				atracciones_no_preferidas = this.datos.getMapa_no_preferencia_atraccion().get("SinPreferencia");
 
 			this.ofrecerPromociones(usuario_actual, promos_preferidas, scanner);
 			this.ofrecerAtracciones(usuario_actual, atracciones_preferidas, scanner);
@@ -49,6 +62,8 @@ public class Menu {
 			System.out.println("Muchas gracias por elegirnos!");
 			System.out.println("---------------------------------------------------------------------\n");
 		}
+
+		this.arch_salida.escribirSalida(this.datos);
 	}
 
 	private void ofrecerPromociones(Usuario usuario_actual, TreeSet<Promocion> arbol, Scanner scanner) {

@@ -34,6 +34,10 @@ public class Atraccion implements Comparable<Atraccion> {
 		return this.tiempoPromedio;
 	}
 
+	public int getCupoDiario() {
+		return cupoDiario;
+	}
+
 	public boolean tieneCupo() {
 		return this.cupoDiario > 0;
 	}
