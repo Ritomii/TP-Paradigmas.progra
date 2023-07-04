@@ -32,7 +32,8 @@ public class TestcompareTo {
 				"Degustacion", 380);
 
 		Assert.assertEquals(promoPaisaje.compareTo(promoDegustacion), -1);
-		// El compareTo ordena de mayor a menor, por eso este test debe devolver -1.
+		// El compareTo ordena de mayor a menor, por eso este test debe devolver
+		// -1.
 		// (Paisaje es mayor en precio que Degustacion)
 	}
 
@@ -51,7 +52,8 @@ public class TestcompareTo {
 				"Degustacion", 100);
 
 		Assert.assertEquals(promoAventura.compareTo(promoDegustacion), 1);
-		// El compareTo ordena de mayor a menor, por eso este test debe devolver 1.
+		// El compareTo ordena de mayor a menor, por eso este test debe devolver
+		// 1.
 		// (Aventura es menor en duracion que Degustacion)
 	}
 
@@ -71,7 +73,8 @@ public class TestcompareTo {
 		PromocionAbsoluta promoAventura = new PromocionAbsoluta("La gran promo", atraccionesAventura, "Aventura", 490);
 
 		Assert.assertEquals(promoDegustacion.compareTo(promoAventura), 1);
-		// El compareTo ordena de mayor a menor, por eso este test debe devolver 1.
+		// El compareTo ordena de mayor a menor, por eso este test debe devolver
+		// 1.
 		// (Degustacion es menor en precio que Aventura)
 	}
 }

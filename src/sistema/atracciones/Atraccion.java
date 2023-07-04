@@ -38,12 +38,12 @@ public class Atraccion implements Comparable<Atraccion> {
 		return cupoDiario;
 	}
 
-	public boolean tieneCupo() {
-		return this.cupoDiario > 0;
+	public boolean tieneCupo(int cantUsuarios) {
+		return this.cupoDiario >= cantUsuarios;
 	}
 
-	public void comprar() {
-		this.cupoDiario--;
+	public void comprar(int cantUsuarios) {
+		this.cupoDiario -= cantUsuarios;
 	}
 
 	@Override

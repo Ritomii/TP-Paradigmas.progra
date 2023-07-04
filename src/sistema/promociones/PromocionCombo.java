@@ -19,16 +19,16 @@ public class PromocionCombo extends Promocion {
 	public double getDuracion() {
 		return duracion + this.atraccion_gratis.getTiempoPromedio();
 	}
-	
+
 	@Override
-	public boolean tieneCupo() {
-		return super.tieneCupo() && this.atraccion_gratis.tieneCupo();
+	public boolean tieneCupo(int cantUsuarios) {
+		return super.tieneCupo(cantUsuarios) && this.atraccion_gratis.tieneCupo(cantUsuarios);
 	}
 
 	@Override
-	public void comprar() {
-		super.comprar();
-		this.atraccion_gratis.comprar();
+	public void comprar(int cantUsuarios) {
+		super.comprar(cantUsuarios);
+		this.atraccion_gratis.comprar(cantUsuarios);
 	}
 
 	@Override

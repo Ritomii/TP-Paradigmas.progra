@@ -9,14 +9,19 @@ public class Promocion implements Comparable<Promocion> {
 	protected double precio_original;
 	protected double precio_mostrar;// precio final
 
-	protected Atraccion[] vector_atracciones; // Este podria ser un Arraylist pero no hay porque agregar y sacar
+	protected Atraccion[] vector_atracciones; // Este podria ser un Arraylist
+												// pero no hay porque agregar y
+												// sacar
 
 	public Promocion(String nombre, Atraccion[] atracciones, String tipo_promocion) {
 		this.nombre = nombre;
 		this.tipo_promocion = tipo_promocion;
 		this.vector_atracciones = atracciones;
 		for (int i = 0; i < atracciones.length; i++) {
-			this.precio_original += atracciones[i].getCosto(); // voy tambien cargandole el precio y la duracion
+			this.precio_original += atracciones[i].getCosto(); // voy tambien
+																// cargandole el
+																// precio y la
+																// duracion
 			this.duracion += atracciones[i].getTiempoPromedio();
 		}
 	}
@@ -40,7 +45,8 @@ public class Promocion implements Comparable<Promocion> {
 	@Override
 	public int compareTo(Promocion otra) {
 		int retorno;
-		// Se cambia el orden de los parametros para que el ordenamiento en arbol sea de
+		// Se cambia el orden de los parametros para que el ordenamiento en
+		// arbol sea de
 		// mayor a menor.
 		if ((retorno = Double.compare(otra.precio_mostrar, this.precio_mostrar)) == 0) {
 			if ((retorno = Double.compare(otra.duracion, this.duracion)) == 0) {
@@ -52,10 +58,11 @@ public class Promocion implements Comparable<Promocion> {
 		return retorno;
 	}
 
-	public boolean tieneCupo() {
+	public boolean tieneCupo(int cantUsuarios) {
 		boolean hay_cupo = true;
 		for (int i = 0; i < this.vector_atracciones.length && hay_cupo; i++) {
-			if (!vector_atracciones[i].tieneCupo())
+			if (!vector_atracciones[i].tieneCupo(cantUsuarios)) // enviamos
+																// cantUsuarios
 				hay_cupo = false;
 		}
 		return hay_cupo;
@@ -69,9 +76,9 @@ public class Promocion implements Comparable<Promocion> {
 		return nombres_atracciones;
 	}
 
-	public void comprar() {
+	public void comprar(int cantUsuarios) {
 		for (int i = 0; i < vector_atracciones.length; i++) {
-			vector_atracciones[i].comprar();
+			vector_atracciones[i].comprar(cantUsuarios);
 		}
 	}
 

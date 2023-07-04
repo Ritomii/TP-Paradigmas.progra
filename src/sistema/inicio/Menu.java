@@ -38,6 +38,8 @@ public class Menu {
 			preferencia = usuario_actual.getPreferencia();
 			// Es el tipo_atraccion que le gusta al usuario
 
+			this.ingresaParticipantes(usuario_actual, scanner);
+
 			TreeSet<Promocion> promos_preferidas = this.datos.getMapa_promos_tipos().get(preferencia);
 			TreeSet<Atraccion> atracciones_preferidas = this.datos.getMapa_atracciones_tipos().get(preferencia);
 
@@ -110,5 +112,24 @@ public class Menu {
 			es_letra_valida = letra.equalsIgnoreCase("S") || letra.equalsIgnoreCase("N");
 		} while (!es_letra_valida);
 		return letra.equalsIgnoreCase("S");
+	}
+
+	public void ingresaParticipantes(Usuario uss, Scanner scanner) {
+		String participantes = "1";
+		boolean es_valor_valido = true;
+		do {
+			try {
+				System.out.println("Ingrese cantidad de participantes en el recorrido:\n");
+				participantes = scanner.nextLine();
+
+				if (Integer.parseInt(participantes) < 1)
+					es_valor_valido = false;
+				else
+					es_valor_valido = true;
+			} catch (NumberFormatException ex) {
+				es_valor_valido = false;
+			}
+		} while (!es_valor_valido);
+		uss.setCantUsuarios(Integer.parseInt(participantes));
 	}
 }

@@ -12,6 +12,7 @@ public class Usuario {
 	private String preferencia;
 	private int dinero;
 	private double tiempo;
+	private int cantUsuarios = 1; // o el nombre que sea.
 
 	HashSet<String> set_atracciones_aceptadas = new HashSet<String>();
 	ArrayList<Promocion> lista_promociones = new ArrayList<Promocion>();
@@ -30,6 +31,14 @@ public class Usuario {
 
 	public String getNombre() {
 		return this.nombre;
+	}
+
+	public void setCantUsuarios(int cantUsuarios) {
+		this.cantUsuarios = cantUsuarios;
+	}
+
+	public int getCantUsuarios() {
+		return this.cantUsuarios;
 	}
 
 	public String salidaUsuario() {
@@ -61,15 +70,15 @@ public class Usuario {
 
 	@Override
 	public String toString() {
-		return "Usuario: " + nombre + "\nPreferencia: " + preferencia + "\nPresupuesto restante: " + dinero
-				+ "\nTiempo restante: " + tiempo + "\n";
+		return "Usuario: " + nombre + "\nCantidad de participantes: " + this.cantUsuarios + "\nPreferencia: "
+				+ preferencia + "\nPresupuesto restante: " + dinero + "\nTiempo restante: " + tiempo + "\n";
 	}
 
 	// A partir de aca, revisar comparaciones para ints y doubles.
 	// Revisar que el filtro sea suficiente
 	public boolean puedeComprarPromocion(Promocion promo) {
-		return this.dinero >= promo.getPrecio_mostrar() && this.tiempo >= promo.getDuracion() && promo.tieneCupo()
-				&& !this.tieneAceptada(promo);
+		return this.dinero >= promo.getPrecio_mostrar() * this.cantUsuarios && this.tiempo >= promo.getDuracion()
+				&& promo.tieneCupo(this.cantUsuarios) && !this.tieneAceptada(promo);
 	}
 
 	private boolean tieneAceptada(Promocion promo) {
@@ -96,14 +105,14 @@ public class Usuario {
 			this.set_atracciones_aceptadas.add(gratis_incluida.getNombre());
 		}
 
-		this.dinero -= promo.getPrecio_mostrar();
-		this.tiempo -= promo.getDuracion();
-		promo.comprar();
+		this.dinero -= promo.getPrecio_mostrar() * this.cantUsuarios;
+		this.tiempo -= promo.getDuracion() * this.cantUsuarios;
+		promo.comprar(this.cantUsuarios);
 	}
 
 	public boolean puedeComprarAtraccion(Atraccion atraccion) {
-		return this.dinero >= atraccion.getCosto() && this.tiempo >= atraccion.getTiempoPromedio()
-				&& atraccion.tieneCupo() && !this.tieneAceptada(atraccion);
+		return this.dinero >= atraccion.getCosto() * this.cantUsuarios && this.tiempo >= atraccion.getTiempoPromedio()
+				&& atraccion.tieneCupo(this.cantUsuarios) && !this.tieneAceptada(atraccion);
 	}
 
 	private boolean tieneAceptada(Atraccion atraccion) {
@@ -115,6 +124,6 @@ public class Usuario {
 		this.lista_atracciones.add(atraccion);
 		this.dinero -= atraccion.getCosto();
 		this.tiempo -= atraccion.getTiempoPromedio();
-		atraccion.comprar();
+		atraccion.comprar(this.cantUsuarios);
 	}
 }
